@@ -12,7 +12,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/SuperSodaSea/Plugcat.svg?style=social)](https://github.com/SuperSodaSea/Plugcat/stargazers)
 [![GitHub License](https://img.shields.io/github/license/SuperSodaSea/Plugcat)](https://github.com/SuperSodaSea/Plugcat/blob/main/LICENSE)
 
-Bothered by the lack of video output interface on your FPGA boards? This tiny module can help you! QSFP-HDMI-OUT-NB7NQ621M is an innovative QSFP module with HDMI output function: simply plug it into the QSFP socket on your FPGA boards and instantly get an HDMI output port. This greatly enhances the functionality of your FPGA boards.
+Bothered by the lack of video output interface on your FPGA boards? This tiny innovative module can help you! QSFP-HDMI-OUT-NB7NQ621M is a QSFP module with HDMI output connector: simply plug it into the QSFP socket on your FPGA boards and get HDMI output capability instantly. This greatly enhances the extensibility of your FPGA boards.
 
 - Uses [NB7NQ621M](https://www.onsemi.com/products/signal-conditioning-control/redrivers/NB7NQ621M) redriver chip, supports HDMI 2.1 video signal output, bandwidth up to 48Gbps
 - HDMI 2.0 TMDS example code provided, supports display modes such as 1920x1080@240Hz, 2560x1440@144Hz, 3840x2160@60Hz, etc.

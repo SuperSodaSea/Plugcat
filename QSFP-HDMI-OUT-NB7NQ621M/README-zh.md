@@ -12,7 +12,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/SuperSodaSea/Plugcat.svg?style=social)](https://github.com/SuperSodaSea/Plugcat/stargazers)
 [![GitHub License](https://img.shields.io/github/license/SuperSodaSea/Plugcat)](https://github.com/SuperSodaSea/Plugcat/blob/main/LICENSE)
 
-您是否为 FPGA 板卡缺少视频输出接口而烦恼？这款小巧精致的模块可以帮到您！QSFP-HDMI-OUT-NB7NQ621M 是一款具有 HDMI 输出功能的创新 QSFP 模块：只需将其插入 FPGA 板卡上的 QSFP 插槽中，即可立即获得一个 HDMI 输出接口。这将极大拓展您 FPGA 板卡的功能。
+还在为 FPGA 板卡缺少视频输出接口而发愁吗？这款小巧精致的创新模块可以帮您！QSFP-HDMI-OUT-NB7NQ621M 是一款具有 HDMI 输出接口的 QSFP 模块：只需将其插入 FPGA 板卡上的 QSFP 插槽中，即可立即使板卡获得 HDMI 输出功能。这将极大提高您 FPGA 板卡的可扩展性。
 
 - 使用 [NB7NQ621M](https://www.onsemi.com/products/signal-conditioning-control/redrivers/NB7NQ621M) 重驱动器芯片，支持HDMI 2.1 视频信号输出，带宽高达 48Gbps
 - 提供 HDMI 2.0 TMDS 示例代码，支持 1920x1080@240Hz、2560x1440@144Hz、3840x2160@60Hz 等显示模式
