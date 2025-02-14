@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "AMAZING")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCAD/symbols/AMAZING.kicad_sym")(options "")(descr ""))
+  (lib (name "Onsemi")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCAD/symbols/Onsemi.kicad_sym")(options "")(descr ""))
+  (lib (name "SFF")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCAD/symbols/SFF.kicad_sym")(options "")(descr ""))
+)

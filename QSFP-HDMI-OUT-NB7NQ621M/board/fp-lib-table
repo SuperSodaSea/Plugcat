@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Onsemi")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCAD/footprints/Onsemi.pretty")(options "")(descr ""))
+  (lib (name "SFF")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCAD/footprints/SFF.pretty")(options "")(descr ""))
+)

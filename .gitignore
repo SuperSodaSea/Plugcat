@@ -1,0 +1,24 @@
+# VSCode
+.vscode
+
+# KiCAD
+*.bak
+*.kicad_prl
+*.lck
+*.tmp
+*-backups
+fp-info-cache
+
+# KiCAD Fabrication Toolkit
+fabrication-toolkit-options.json
+production
+
+# Chisel
+.bloop
+.metals
+.scala-build
+out
+
+# Vivado
+**/build/*
+!**/build/Makefile
