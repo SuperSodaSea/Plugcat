@@ -112,7 +112,7 @@ wire i2c_valid;
 reg i2c_ready;
 reg [6:0] i2c_address;
 reg [15:0] i2c_data;
-wire i2c_ack;
+wire i2c_nack;
 reg [3:0] i2c_index;
 
 I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(100_000)) i2c_master(
@@ -130,7 +130,7 @@ I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(100_000)) i2c_master(
     .rw (0),
     .register (i2c_data[15:8]),
     .data_write (i2c_data[7:0]),
-    .ack (i2c_ack)
+    .nack (i2c_nack)
 );
 
 reg [31:0] wait_count;
@@ -167,9 +167,9 @@ always @(posedge system_clock) begin
                 state <= STATE_IDLE;
             end else begin
                 if (i2c_valid) begin
-                    if (i2c_ack) begin
-                        wait_count <= COUNT_RESET_VALUE;
+                    if (i2c_nack) begin
                         i2c_ready <= 0;
+                        wait_count <= COUNT_RESET_VALUE;
                         state <= STATE_WAIT;
                     end else begin
                         if (i2c_index != NB7NQ621M_I2C_DATA_COUNT - 1) begin
@@ -190,20 +190,21 @@ always @(posedge system_clock) begin
                 state <= STATE_IDLE;
             end else begin
                 if (i2c_valid) begin
-                    if (i2c_ack) begin
+                    if (i2c_nack) begin
+                        // HDMI 2.0 Not Supported
+                        i2c_ready <= 0;
+                        if (tmds_clock_over_340mhz) begin
+                            wait_count <= COUNT_RESET_VALUE;
+                            state <= STATE_WAIT;
+                        end else begin
+                            state <= STATE_RUN;
+                        end
+                    end else begin
                         // HDMI 2.0 Supported
                         i2c_ready <= 1;
                         i2c_address <= SCDC_ADDRESS;
                         i2c_data <= { 8'h20, { 6'b0, tmds_bit_clock_ratio, scrambler_enable } }; // TMDS Configuration
                         state <= STATE_CONFIGURE_TMDS;
-                    end else begin
-                        // HDMI 2.0 Not Supported
-                        i2c_ready <= 0;
-                        if (tmds_clock_over_340mhz) begin
-                            state <= STATE_WAIT;
-                        end else begin
-                            state <= STATE_RUN;
-                        end
                     end
                 end
             end
@@ -213,12 +214,12 @@ always @(posedge system_clock) begin
                 state <= STATE_IDLE;
             end else begin
                 if (i2c_valid) begin
-                    if (i2c_ack) begin
-                        i2c_ready <= 0;
-                        state <= STATE_RUN;
-                    end else begin
-                        i2c_ready <= 0;
+                    i2c_ready <= 0;
+                    if (i2c_nack) begin
+                        wait_count <= COUNT_RESET_VALUE;
                         state <= STATE_WAIT;
+                    end else begin
+                        state <= STATE_RUN;
                     end
                 end
             end

@@ -16,7 +16,7 @@ module I2CMaster #(
     input rw, // 0: Write, 1: Read
     input [7:0] register,
     input [7:0] data_write,
-    output ack // 0: ACK, 1: NACK
+    output nack // 0: ACK, 1: NACK
 );
 
 localparam
@@ -32,7 +32,7 @@ localparam COUNT_RESET_VALUE = CLOCK_FREQUENCY / FREQUENCY / 4 - 1;
 reg scl_output_reg;
 reg sda_output_reg;
 reg valid_reg;
-reg ack_reg;
+reg nack_reg;
 
 reg [7:0] data_reg[0:2];
 reg [1:0] data_index;
@@ -48,7 +48,7 @@ always @(posedge clock) begin
         scl_output_reg <= 1;
         sda_output_reg <= 1;
         valid_reg <= 0;
-        ack_reg <= 0;
+        nack_reg <= 0;
     end else begin
         case (state)
         STATE_IDLE:
@@ -127,10 +127,10 @@ always @(posedge clock) begin
                 1:
                     scl_output_reg <= 1;
                 2:
-                    ack_reg <= sda_input;
+                    nack_reg <= sda_input;
                 3: begin
                     scl_output_reg <= 0;
-                    if (~ack_reg & (data_index != 2)) begin
+                    if (~nack_reg & (data_index != 2)) begin
                         data_index <= data_index + 1;
                         data_bit_index <= 7;
                         state <= STATE_WRITE;
@@ -155,6 +155,6 @@ end
 assign scl_output = scl_output_reg;
 assign sda_output = sda_output_reg;
 assign valid = valid_reg;
-assign ack = ack_reg;
+assign nack = nack_reg;
 
 endmodule
