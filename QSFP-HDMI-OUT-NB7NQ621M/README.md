@@ -14,6 +14,8 @@
 
 Bothered by the lack of video output interface on your FPGA boards? This tiny innovative module can help you! QSFP-HDMI-OUT-NB7NQ621M is a QSFP module with HDMI output connector: simply plug it into the QSFP socket on your FPGA boards and get HDMI output capability instantly. This greatly enhances the extensibility of your FPGA boards.
 
+## Features
+
 - Uses [NB7NQ621M](https://www.onsemi.com/products/signal-conditioning-control/redrivers/NB7NQ621M) redriver chip, supports HDMI 2.1 video signal output, bandwidth up to 48Gbps
 - HDMI 2.0 TMDS example code provided, supports display modes such as 1920x1080@240Hz, 2560x1440@144Hz, 3840x2160@60Hz, etc.
 - HDMI 2.1 FRL example code TBA, you can use arbitrary HDMI 2.1 IP core
@@ -45,6 +47,51 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 - Xilinx UltraScale+ (GTY)
   - BoChenJingXin KU5P
   - Alibaba VU13P
+
+## Example Code
+
+The example code can be built on both Windows and Linux.
+
+### Dependencies
+
+- [Python 3](https://www.python.org/) (for build scripts)
+- [Java](https://www.java.com/) (for Chisel)
+- [Mill](https://mill-build.org/mill/index.html) (for Chisel)
+- [Vivado](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html) (for building Xilinx FPGA projects)
+
+### Build Example Code
+
+Execute the following commands in the corresponding directory to build the example code:
+
+```bash
+python build.py build
+```
+
+The default video mode is 1920x1080@60Hz. To change the video mode, add the following parameters to the build command:
+
+```bash
+python build.py build --resolution 2560x1440 --refresh-rate 144
+```
+
+Supported video modes:
+
+ - `1920x1080@30/60/120/144/240Hz`
+ - `2560x1440@30/60/120/144Hz`
+ - `3840x2160@30/60Hz`
+
+Other resolutions can be implemented by modifying the code.
+
+### Programming Bitstream
+
+```bash
+python build.py program
+```
+
+### Flashing Bitstream
+
+```bash
+python build.py flash
+```
 
 ## Gallery
 

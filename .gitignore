@@ -20,5 +20,4 @@ production
 out
 
 # Vivado
-**/build/*
-!**/build/Makefile
+build

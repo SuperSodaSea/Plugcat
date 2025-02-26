@@ -1,0 +1,21 @@
+package build
+
+import mill._
+import scalalib._
+
+import $packages._
+
+trait Module extends ScalaModule {
+    def scalaVersion = "2.13.15"
+    def scalacOptions = super.scalacOptions() ++ Seq(
+        "-unchecked",
+        "-deprecation",
+        "-language:reflectiveCalls",
+        "-feature",
+        "-Xcheckinit",
+        "-Xfatal-warnings",
+        "-Ywarn-dead-code",
+        "-Ywarn-unused",
+        "-Ymacro-annotations",
+    )
+}
