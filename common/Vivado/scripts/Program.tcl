@@ -1,8 +1,7 @@
-set PROJECT_PATH [file normalize [file dirname [info script]]/..]
+set CONFIG_PATH [lindex $argv 0]
+set BITSTREAM_PATH [lindex $argv 1]
 
-set BITSTREAM_PATH [lindex $argv 0]
-
-source $PROJECT_PATH/scripts/Config.tcl
+source $CONFIG_PATH
 
 open_hw_manager
 connect_hw_server -allow_non_jtag

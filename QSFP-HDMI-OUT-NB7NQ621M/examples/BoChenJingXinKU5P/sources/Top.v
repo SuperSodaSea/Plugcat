@@ -62,22 +62,22 @@ GTWizardWrapper0 gt_wizard_wrapper_0(
     .tx_data (tx_data)
 );
 
-wire scl_input;
-wire scl_output;
-wire sda_input;
-wire sda_output;
+wire qsfp_scl_input;
+wire qsfp_scl_output;
+wire qsfp_sda_input;
+wire qsfp_sda_output;
 
-IOBUF scl_iobuf(
-    .O  (scl_input),
-    .I  (scl_output),
+IOBUF qsfp_scl_iobuf(
+    .O  (qsfp_scl_input),
+    .I  (qsfp_scl_output),
     .IO (qsfp_scl),
-    .T  (scl_output)
+    .T  (qsfp_scl_output)
 );
-IOBUF sda_iobuf(
-    .O  (sda_input),
-    .I  (sda_output),
+IOBUF qsfp_sda_iobuf(
+    .O  (qsfp_sda_input),
+    .I  (qsfp_sda_output),
     .IO (qsfp_sda),
-    .T  (sda_output)
+    .T  (qsfp_sda_output)
 );
 
 wire hpd = ~qsfp_modprsl;
@@ -90,10 +90,10 @@ HDMIOUTExample #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .RESOLUTION (`RESOLUTION), 
     .tx_reset (tx_reset),
     .tx_data (tx_data),
     .hpd (hpd),
-    .scl_input (scl_input),
-    .scl_output (scl_output),
-    .sda_input (sda_input),
-    .sda_output (sda_output),
+    .scl_input (qsfp_scl_input),
+    .scl_output (qsfp_scl_output),
+    .sda_input (qsfp_sda_input),
+    .sda_output (qsfp_sda_output),
     .run (run)
 );
 
