@@ -1,9 +1,10 @@
 import argparse
 import os
+import shutil
 import subprocess
 
-VIVADO = os.getenv('VIVADO', 'vivado')
-MILL = os.getenv('MILL', 'mill')
+VIVADO = os.getenv('VIVADO', shutil.which('vivado'))
+MILL = os.getenv('MILL', shutil.which('mill'))
 
 RESOLUTION_LIST = [
     '1920x1080',
@@ -30,7 +31,7 @@ BITSTREAM_PATH = os.path.join(BUILD_PATH, 'bitstream')
 
 def runCommand(command, **kwargs):
     print(command)
-    subprocess.run(command, shell = True, check = True, **kwargs)
+    subprocess.run(command, check = True, **kwargs)
 
 def runVivadoScript(script, *args):
     runCommand([VIVADO, '-nojournal', '-nolog', '-mode', 'batch', '-source', script, '-tclargs', *args], cwd = BUILD_PATH)
