@@ -9,7 +9,7 @@ create_project -force -part $PART_NAME $PROJECT_NAME
 
 source $PROJECT_PATH/scripts/IP/GTWizard0.tcl
 source $PROJECT_PATH/scripts/IP/GTWizard1.tcl
-source $PROJECT_PATH/scripts/IP/PLL.tcl
+source $PROJECT_PATH/scripts/IP/PLL0.tcl
 
 set_property VERILOG_DEFINE [list \
     RESOLUTION="$RESOLUTION" \
