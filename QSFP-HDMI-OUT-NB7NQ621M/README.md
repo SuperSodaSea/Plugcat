@@ -44,9 +44,12 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 
 ## Verified FPGA Boards
 
-- Xilinx UltraScale+ (GTY)
-  - BoChenJingXin KU5P
-  - Alibaba VU13P
+- Xilinx Kintex UltraScale+
+  - BoChenJingXin KU5P ([Example Code](./examples/BoChenJingXinKU5P/))
+- Xilinx Virtex UltraScale+
+  - Alibaba VU13P ([Example Code](./examples/AlibabaVU13P/))
+- Altera Stratix V GS
+  - Microsoft HP Azure X930613-001
 
 ## Example Code
 

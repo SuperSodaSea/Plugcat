@@ -42,11 +42,14 @@
 - 厚度: 1.00mm
 - 叠层结构: JLC04101H-3313
 
-## 已验证 FPGA 板卡
+## 已验证的 FPGA 板卡
 
-- Xilinx UltraScale+ (GTY)
-  - 博宸精芯 KU5P
-  - 阿里巴巴 VU13P
+- Xilinx Kintex UltraScale+
+  - 博宸精芯 KU5P ([示例代码](./examples/BoChenJingXinKU5P/))
+- Xilinx Virtex UltraScale+
+  - 阿里巴巴 VU13P ([示例代码](./examples/BoChenJingXinKU5P/))
+- Altera Stratix V GS
+  - Microsoft HP Azure X930613-001
 
 ## 示例代码
 
