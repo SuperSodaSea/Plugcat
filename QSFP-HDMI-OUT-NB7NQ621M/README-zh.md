@@ -45,9 +45,9 @@
 ## 已验证的 FPGA 板卡
 
 - Xilinx Kintex UltraScale+
-  - 博宸精芯 KU5P ([示例代码](./examples/BoChenJingXinKU5P/))
+  - 博宸精芯 KU5P ([示例代码](./examples/BoChenJingXin-KU5P/))
 - Xilinx Virtex UltraScale+
-  - 阿里巴巴 VU13P ([示例代码](./examples/BoChenJingXinKU5P/))
+  - 阿里巴巴 VU13P ([示例代码](./examples/Alibaba-VU13P/))
 - Altera Stratix V GS
   - Microsoft HP Azure X930613-001
 

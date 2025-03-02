@@ -1,4 +1,4 @@
-set PROJECT_NAME AlibabaVU13P_Example
+set PROJECT_NAME Alibaba-VU13P-Example
 
 set TOP_NAME Top
 

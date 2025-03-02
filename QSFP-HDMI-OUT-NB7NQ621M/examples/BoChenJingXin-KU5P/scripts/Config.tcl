@@ -1,4 +1,4 @@
-set PROJECT_NAME BoChenJingXinKU5P_Example
+set PROJECT_NAME BoChenJingXin-KU5P-Example
 
 set TOP_NAME Top
 

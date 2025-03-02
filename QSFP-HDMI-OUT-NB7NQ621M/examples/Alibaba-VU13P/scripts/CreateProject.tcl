@@ -24,4 +24,4 @@ add_files -fileset sources_1 \
     [glob $PROJECT_PATH/sources/*.v]
 
 add_files -fileset constrs_1 \
-    [glob $PROJECT_PATH/../../../common/Vivado/constraints/AlibabaVU13P/*.xdc]
+    [glob $PROJECT_PATH/../../../common/Vivado/constraints/Alibaba-VU13P/*.xdc]
