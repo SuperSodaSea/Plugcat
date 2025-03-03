@@ -49,7 +49,7 @@
 - Xilinx Virtex UltraScale+
   - 阿里巴巴 VU13P ([示例代码](./examples/Alibaba-VU13P/))
 - Altera Stratix V GS
-  - Microsoft HP Azure X930613-001
+  - 微软 Catapult v2 Storey Peak（Microsoft X930613-001）
 
 ## 示例代码
 

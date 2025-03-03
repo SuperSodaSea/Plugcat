@@ -49,7 +49,7 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 - Xilinx Virtex UltraScale+
   - Alibaba VU13P ([Example Code](./examples/Alibaba-VU13P/))
 - Altera Stratix V GS
-  - Microsoft HP Azure X930613-001
+  - Microsoft Catapult v2 Storey Peak (Microsoft X930613-001)
 
 ## Example Code
 
