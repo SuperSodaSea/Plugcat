@@ -44,12 +44,14 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 
 ## Verified FPGA Boards
 
+- Xilinx Kintex Ultrascale
+  - Alpha Data ADM-PCIE-KU3
 - Xilinx Kintex UltraScale+
-  - BoChenJingXin KU5P ([Example Code](./examples/BoChenJingXin-KU5P/))
+  - BoChenJingXin KU5P (with [Example Code](./examples/BoChenJingXin-KU5P/))
 - Xilinx Virtex UltraScale+
-  - Alibaba VU13P ([Example Code](./examples/Alibaba-VU13P/))
+  - Alibaba VU13P (with [Example Code](./examples/Alibaba-VU13P/))
 - Altera Stratix V GS
-  - Microsoft Catapult v2 Storey Peak (Microsoft X930613-001)
+  - Microsoft Catapult v2 Storey Peak / X930613-001
 
 ## Example Code
 

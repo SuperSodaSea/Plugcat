@@ -44,12 +44,14 @@
 
 ## 已验证的 FPGA 板卡
 
+- Xilinx Kintex Ultrascale
+  - Alpha Data ADM-PCIE-KU3
 - Xilinx Kintex UltraScale+
-  - 博宸精芯 KU5P ([示例代码](./examples/BoChenJingXin-KU5P/))
+  - 博宸精芯 KU5P（含[示例代码](./examples/BoChenJingXin-KU5P/)）
 - Xilinx Virtex UltraScale+
-  - 阿里巴巴 VU13P ([示例代码](./examples/Alibaba-VU13P/))
+  - 阿里巴巴 VU13P（含[示例代码](./examples/Alibaba-VU13P/)）
 - Altera Stratix V GS
-  - 微软 Catapult v2 Storey Peak（Microsoft X930613-001）
+  - 微软 Catapult v2 Storey Peak / X930613-001
 
 ## 示例代码
 
