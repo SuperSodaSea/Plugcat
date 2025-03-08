@@ -13,31 +13,31 @@ module Top(
     output led_run,
     output [7:0] led,
 
-    input qsfp_0_refclk_p,
-    input qsfp_0_refclk_n,
-    input [3:0] qsfp_0_rxp,
-    input [3:0] qsfp_0_rxn,
-    output [3:0] qsfp_0_txp,
-    output [3:0] qsfp_0_txn,
-    input qsfp_0_modprsl,
-    output qsfp_0_resetl,
-    inout qsfp_0_scl,
-    inout qsfp_0_sda,
-    output qsfp_0_led_y,
-    output qsfp_0_led_g,
+    input qsfp1_refclk_p,
+    input qsfp1_refclk_n,
+    input [3:0] qsfp1_rxp,
+    input [3:0] qsfp1_rxn,
+    output [3:0] qsfp1_txp,
+    output [3:0] qsfp1_txn,
+    input qsfp1_modprsl,
+    output qsfp1_resetl,
+    inout qsfp1_scl,
+    inout qsfp1_sda,
+    output qsfp1_led_y,
+    output qsfp1_led_g,
 
-    input qsfp_1_refclk_p,
-    input qsfp_1_refclk_n,
-    input [3:0] qsfp_1_rxp,
-    input [3:0] qsfp_1_rxn,
-    output [3:0] qsfp_1_txp,
-    output [3:0] qsfp_1_txn,
-    input qsfp_1_modprsl,
-    output qsfp_1_resetl,
-    inout qsfp_1_scl,
-    inout qsfp_1_sda,
-    output qsfp_1_led_y,
-    output qsfp_1_led_g
+    input qsfp2_refclk_p,
+    input qsfp2_refclk_n,
+    input [3:0] qsfp2_rxp,
+    input [3:0] qsfp2_rxn,
+    output [3:0] qsfp2_txp,
+    output [3:0] qsfp2_txn,
+    input qsfp2_modprsl,
+    output qsfp2_resetl,
+    inout qsfp2_scl,
+    inout qsfp2_sda,
+    output qsfp2_led_y,
+    output qsfp2_led_g
 );
 
 localparam CLOCK_FREQUENCY = 200_000_000;
@@ -67,12 +67,12 @@ GTWizardWrapper0 gt_wizard_wrapper_0(
     .clock (gt_config_clock),
     .reset (system_reset),
 
-    .refclk_p (qsfp_0_refclk_p),
-    .refclk_n (qsfp_0_refclk_n),
-    .rxp (qsfp_0_rxp),
-    .rxn (qsfp_0_rxn),
-    .txp (qsfp_0_txp),
-    .txn (qsfp_0_txn),
+    .refclk_p (qsfp1_refclk_p),
+    .refclk_n (qsfp1_refclk_n),
+    .rxp (qsfp1_rxp),
+    .rxn (qsfp1_rxn),
+    .txp (qsfp1_txp),
+    .txn (qsfp1_txn),
 
     .tx_clock (tx_clock[0]),
     .tx_reset (tx_reset[0]),
@@ -83,12 +83,12 @@ GTWizardWrapper1 gt_wizard_wrapper_1(
     .clock (gt_config_clock),
     .reset (system_reset),
 
-    .refclk_p (qsfp_1_refclk_p),
-    .refclk_n (qsfp_1_refclk_n),
-    .rxp (qsfp_1_rxp),
-    .rxn (qsfp_1_rxn),
-    .txp (qsfp_1_txp),
-    .txn (qsfp_1_txn),
+    .refclk_p (qsfp2_refclk_p),
+    .refclk_n (qsfp2_refclk_n),
+    .rxp (qsfp2_rxp),
+    .rxn (qsfp2_rxn),
+    .txp (qsfp2_txp),
+    .txn (qsfp2_txn),
 
     .tx_clock (tx_clock[1]),
     .tx_reset (tx_reset[1]),
@@ -100,38 +100,42 @@ wire [1:0] qsfp_scl_output;
 wire [1:0] qsfp_sda_input;
 wire [1:0] qsfp_sda_output;
 
-IOBUF qsfp_0_scl_iobuf(
+IOBUF qsfp1_scl_iobuf(
     .O  (qsfp_scl_input[0]),
     .I  (qsfp_scl_output[0]),
-    .IO (qsfp_0_scl),
+    .IO (qsfp1_scl),
     .T  (qsfp_scl_output[0])
 );
-IOBUF qsfp_0_sda_iobuf(
+IOBUF qsfp1_sda_iobuf(
     .O  (qsfp_sda_input[0]),
     .I  (qsfp_sda_output[0]),
-    .IO (qsfp_0_sda),
+    .IO (qsfp1_sda),
     .T  (qsfp_sda_output[0])
 );
 
-IOBUF qsfp_1_scl_iobuf(
+IOBUF qsfp2_scl_iobuf(
     .O  (qsfp_scl_input[1]),
     .I  (qsfp_scl_output[1]),
-    .IO (qsfp_1_scl),
+    .IO (qsfp2_scl),
     .T  (qsfp_scl_output[1])
 );
-IOBUF qsfp_1_sda_iobuf(
+IOBUF qsfp2_sda_iobuf(
     .O  (qsfp_sda_input[1]),
     .I  (qsfp_sda_output[1]),
-    .IO (qsfp_1_sda),
+    .IO (qsfp2_sda),
     .T  (qsfp_sda_output[1])
 );
 
-wire [1:0] hpd = { ~qsfp_1_modprsl, ~qsfp_0_modprsl };
+wire [1:0] hpd = { ~qsfp2_modprsl, ~qsfp1_modprsl };
 wire [1:0] run;
 
 generate
     for (genvar i = 0; i < 2; i = i + 1) begin
-        HDMIOUTExample #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .RESOLUTION (`RESOLUTION), .REFRESH_RATE (`REFRESH_RATE)) hdmi_out_example(
+        HDMIOUTExample #(
+            .CLOCK_FREQUENCY (CLOCK_FREQUENCY),
+            .RESOLUTION (`RESOLUTION),
+            .REFRESH_RATE (`REFRESH_RATE)
+        ) hdmi_out_example(
             .system_clock (system_clock),
             .system_reset (system_reset),
             .tx_clock (tx_clock[i]),
@@ -150,12 +154,12 @@ endgenerate
 assign led_run = ~system_reset;
 assign led = 0;
 
-assign qsfp_0_resetl = ~system_reset;
-assign qsfp_0_led_y = ~system_reset & hpd[0] & ~run[0];
-assign qsfp_0_led_g = ~system_reset & run[0];
+assign qsfp1_resetl = ~system_reset;
+assign qsfp1_led_y = ~system_reset & hpd[0] & ~run[0];
+assign qsfp1_led_g = ~system_reset & run[0];
 
-assign qsfp_1_resetl = ~system_reset;
-assign qsfp_1_led_y = ~system_reset & hpd[1] & ~run[1];
-assign qsfp_1_led_g = ~system_reset & run[1];
+assign qsfp2_resetl = ~system_reset;
+assign qsfp2_led_y = ~system_reset & hpd[1] & ~run[1];
+assign qsfp2_led_g = ~system_reset & run[1];
 
 endmodule

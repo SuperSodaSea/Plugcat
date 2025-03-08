@@ -83,7 +83,11 @@ IOBUF qsfp_sda_iobuf(
 wire hpd = ~qsfp_modprsl;
 wire run;
 assign qsfp_resetl = ~system_reset;
-HDMIOUTExample #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .RESOLUTION (`RESOLUTION), .REFRESH_RATE (`REFRESH_RATE)) hdmi_out_example(
+HDMIOUTExample #(
+    .CLOCK_FREQUENCY (CLOCK_FREQUENCY),
+    .RESOLUTION (`RESOLUTION),
+    .REFRESH_RATE (`REFRESH_RATE)
+) hdmi_out_example(
     .system_clock (system_clock),
     .system_reset (system_reset),
     .tx_clock (tx_clock),
