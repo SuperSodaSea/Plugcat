@@ -9670,7 +9670,7 @@
 			)
 		)
 		(property "Footprint" "SFF:QSFP-Plug"
-			(at 45.72 25.4 0)
+			(at 66.04 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
