@@ -4,6 +4,8 @@
 set_property PACKAGE_PIN Y11 [get_ports qsfp2_refclk_p]
 set_property PACKAGE_PIN Y10 [get_ports qsfp2_refclk_n]
 
+create_clock -name qsfp2_refclk -period 6.206 [get_ports qsfp2_refclk_p]
+
 set_property PACKAGE_PIN AA4 [get_ports qsfp2_rxp[0]]
 set_property PACKAGE_PIN AA3 [get_ports qsfp2_rxn[0]]
 set_property PACKAGE_PIN Y2 [get_ports qsfp2_rxp[1]]

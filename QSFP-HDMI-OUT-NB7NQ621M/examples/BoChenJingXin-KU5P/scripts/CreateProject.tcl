@@ -23,4 +23,5 @@ add_files -fileset sources_1 \
     [glob $PROJECT_PATH/sources/*.v]
 
 add_files -fileset constrs_1 \
-    [glob $PROJECT_PATH/../../../common/Vivado/constraints/BoChenJingXin-KU5P/*.xdc]
+    [glob $PROJECT_PATH/../../../common/Vivado/constraints/BoChenJingXin-KU5P/*.xdc] \
+    [glob $PROJECT_PATH/constraints/*.xdc]
