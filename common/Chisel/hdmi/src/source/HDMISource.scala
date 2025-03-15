@@ -194,6 +194,11 @@ class HDMISource(characters: Int) extends Module {
     val tmds_encoders = (0 until 3).map(_ => Module(new HDMITMDSEncoder(characters)))
     for (i <- 0 until 3)
         tmds_encoders(i).io.input := RegNext(tmds_scramblers(i).io.output)
+    for (i <- 0 until characters) {
+        io.lane0(i) := RegNext(tmds_encoders(0).io.output(i))
+        io.lane1(i) := RegNext(tmds_encoders(1).io.output(i))
+        io.lane2(i) := RegNext(tmds_encoders(2).io.output(i))
+    }
 
     val state_init = Wire(new HDMISourceState)
     state_init.x := h_active
@@ -241,10 +246,6 @@ class HDMISource(characters: Int) extends Module {
         states(i + 1) := unit.io.output_state
         for (j <- 0 until 3)
             tmds_scramblers(j).io.input(i) := unit.io.output(j)
-
-        io.lane0(i) := tmds_encoders(0).io.output(i)
-        io.lane1(i) := tmds_encoders(1).io.output(i)
-        io.lane2(i) := tmds_encoders(2).io.output(i)
 
         when (states(i).x === h_active & states(i).y === v_active - 1.U) {
             io.start_frame := true.B
