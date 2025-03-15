@@ -42,6 +42,7 @@ module Top(
 
 localparam CLOCK_FREQUENCY = 200_000_000;
 
+
 wire system_reset_input = 0;
 
 wire system_clock;
@@ -57,11 +58,12 @@ PLL0 pll_0(
     .locked (pll_0_locked)
 );
 
+
 wire system_reset = ~pll_0_locked;
 
-wire tx_clock[0:1];
-wire tx_reset[0:1];
-wire [159:0] tx_data[0:1];
+wire [1:0] tx_clock;
+wire [1:0] tx_reset;
+wire [159:0] tx_data[1:0];
 
 GTWizardWrapper0 gt_wizard_wrapper_0(
     .clock (gt_config_clock),
@@ -95,35 +97,36 @@ GTWizardWrapper1 gt_wizard_wrapper_1(
     .tx_data (tx_data[1])
 );
 
+
 wire [1:0] qsfp_scl_input;
 wire [1:0] qsfp_scl_output;
 wire [1:0] qsfp_sda_input;
 wire [1:0] qsfp_sda_output;
 
 IOBUF qsfp1_scl_iobuf(
-    .O  (qsfp_scl_input[0]),
-    .I  (qsfp_scl_output[0]),
+    .O (qsfp_scl_input[0]),
+    .I (qsfp_scl_output[0]),
     .IO (qsfp1_scl),
-    .T  (qsfp_scl_output[0])
+    .T (qsfp_scl_output[0])
 );
 IOBUF qsfp1_sda_iobuf(
-    .O  (qsfp_sda_input[0]),
-    .I  (qsfp_sda_output[0]),
+    .O (qsfp_sda_input[0]),
+    .I (qsfp_sda_output[0]),
     .IO (qsfp1_sda),
-    .T  (qsfp_sda_output[0])
+    .T (qsfp_sda_output[0])
 );
 
 IOBUF qsfp2_scl_iobuf(
-    .O  (qsfp_scl_input[1]),
-    .I  (qsfp_scl_output[1]),
+    .O (qsfp_scl_input[1]),
+    .I (qsfp_scl_output[1]),
     .IO (qsfp2_scl),
-    .T  (qsfp_scl_output[1])
+    .T (qsfp_scl_output[1])
 );
 IOBUF qsfp2_sda_iobuf(
-    .O  (qsfp_sda_input[1]),
-    .I  (qsfp_sda_output[1]),
+    .O (qsfp_sda_input[1]),
+    .I (qsfp_sda_output[1]),
     .IO (qsfp2_sda),
-    .T  (qsfp_sda_output[1])
+    .T (qsfp_sda_output[1])
 );
 
 wire [1:0] hpd = { ~qsfp2_modprsl, ~qsfp1_modprsl };

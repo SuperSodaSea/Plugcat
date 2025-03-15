@@ -94,6 +94,7 @@ assign tx_reset = reset | ~reset_tx_done | ~buffbypass_tx_done;
 
 endmodule
 
+
 module GTWizardWrapper1(
     input clock,
     input reset,

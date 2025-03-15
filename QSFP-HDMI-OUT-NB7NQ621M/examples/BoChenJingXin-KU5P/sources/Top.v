@@ -26,6 +26,7 @@ module Top(
 
 localparam CLOCK_FREQUENCY = 200_000_000;
 
+
 wire system_reset_input = ~key[0];
 
 wire system_clock;
@@ -39,6 +40,7 @@ MMCM0 mmcm_0(
     .clk_out2 (gt_config_clock),
     .locked (mmcm_0_locked)
 );
+
 
 wire system_reset = ~mmcm_0_locked;
 
@@ -62,22 +64,23 @@ GTWizardWrapper0 gt_wizard_wrapper_0(
     .tx_data (tx_data)
 );
 
+
 wire qsfp_scl_input;
 wire qsfp_scl_output;
 wire qsfp_sda_input;
 wire qsfp_sda_output;
 
 IOBUF qsfp_scl_iobuf(
-    .O  (qsfp_scl_input),
-    .I  (qsfp_scl_output),
+    .O (qsfp_scl_input),
+    .I (qsfp_scl_output),
     .IO (qsfp_scl),
-    .T  (qsfp_scl_output)
+    .T (qsfp_scl_output)
 );
 IOBUF qsfp_sda_iobuf(
-    .O  (qsfp_sda_input),
-    .I  (qsfp_sda_output),
+    .O (qsfp_sda_input),
+    .I (qsfp_sda_output),
     .IO (qsfp_sda),
-    .T  (qsfp_sda_output)
+    .T (qsfp_sda_output)
 );
 
 wire hpd = ~qsfp_modprsl;
