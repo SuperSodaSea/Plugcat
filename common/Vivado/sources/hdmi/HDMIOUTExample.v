@@ -130,7 +130,8 @@ I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(100_000)) i2c_master(
     .rw (0),
     .register (i2c_data[15:8]),
     .data_write (i2c_data[7:0]),
-    .nack (i2c_nack)
+    .nack (i2c_nack),
+    .data_read ()
 );
 
 reg [31:0] wait_count;
@@ -139,6 +140,7 @@ reg [2:0] state;
 
 always @(posedge system_clock) begin
     if (system_reset) begin
+        i2c_ready <= 0;
         state <= STATE_IDLE;
     end else begin
         case (state)

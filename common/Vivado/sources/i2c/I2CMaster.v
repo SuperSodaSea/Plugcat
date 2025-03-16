@@ -16,16 +16,26 @@ module I2CMaster #(
     input rw, // 0: Write, 1: Read
     input [7:0] register,
     input [7:0] data_write,
-    output nack // 0: ACK, 1: NACK
+    output nack, // 0: ACK, 1: NACK
+    output [7:0] data_read
 );
 
 localparam
     STATE_IDLE = 0,
     STATE_START = 1,
     STATE_STOP = 2,
-    STATE_WRITE = 3,
-    STATE_READ_ACK = 4,
-    STATE_DONE = 5;
+    STATE_WRITE_ADDRESS_WRITE = 3,
+    STATE_READ_ACK_1 = 4,
+    STATE_WRITE_REGISTER = 5,
+    STATE_READ_ACK_2 = 6,
+    STATE_WRITE_DATA = 7,
+    STATE_READ_ACK_3 = 8,
+    STATE_RESTART = 9,
+    STATE_WRITE_ADDRESS_READ = 10,
+    STATE_READ_ACK_4 = 11,
+    STATE_READ_DATA = 12,
+    STATE_WRITE_NACK = 13,
+    STATE_DONE = 14;
 
 localparam COUNT_RESET_VALUE = CLOCK_FREQUENCY / FREQUENCY / 4 - 1;
 
@@ -33,14 +43,14 @@ reg scl_output_reg;
 reg sda_output_reg;
 reg valid_reg;
 reg nack_reg;
+reg [7:0] data_read_reg;
 
-reg [7:0] data_reg[0:2];
-reg [1:0] data_index;
+reg [7:0] data_write_reg;
 reg [2:0] data_bit_index;
 reg [31:0] count;
 reg [1:0] phase;
 
-reg [2:0] state;
+reg [3:0] state;
 
 always @(posedge clock) begin
     if (reset) begin
@@ -54,9 +64,6 @@ always @(posedge clock) begin
         STATE_IDLE:
             if (ready) begin
                 state <= STATE_START;
-                data_reg[0] <= { address, rw };
-                data_reg[1] <= register;
-                data_reg[2] <= data_write;
                 count <= COUNT_RESET_VALUE;
                 phase <= 0;
             end
@@ -69,9 +76,9 @@ always @(posedge clock) begin
                     sda_output_reg <= 0;
                 3: begin
                     scl_output_reg <= 0;
-                    data_index <= 0;
+                    data_write_reg <= { address, 1'b0 };
                     data_bit_index <= 7;
-                    state <= STATE_WRITE;
+                    state <= STATE_WRITE_ADDRESS_WRITE;
                 end
                 endcase
                 count <= COUNT_RESET_VALUE;
@@ -96,28 +103,40 @@ always @(posedge clock) begin
                 count <= COUNT_RESET_VALUE;
                 phase <= phase + 1;
             end
-        STATE_WRITE:
+        STATE_WRITE_ADDRESS_WRITE,
+        STATE_WRITE_REGISTER,
+        STATE_WRITE_DATA,
+        STATE_WRITE_ADDRESS_READ:
             if (count != 0) begin
                 count <= count - 1;
             end else begin
                 case (phase)
                 0:
-                    sda_output_reg <= data_reg[data_index][data_bit_index];
+                    sda_output_reg <= data_write_reg[7];
                 1:
                     scl_output_reg <= 1;
                 3: begin
                     scl_output_reg <= 0;
                     if (data_bit_index != 0) begin
+                        data_write_reg <= data_write_reg << 1;
                         data_bit_index <= data_bit_index - 1;
                     end else begin
-                        state <= STATE_READ_ACK;
+                        case (state)
+                        STATE_WRITE_ADDRESS_WRITE: state <= STATE_READ_ACK_1;
+                        STATE_WRITE_REGISTER: state <= STATE_READ_ACK_2;
+                        STATE_WRITE_DATA: state <= STATE_READ_ACK_3;
+                        STATE_WRITE_ADDRESS_READ: state <= STATE_READ_ACK_4;
+                        endcase
                     end
                 end
                 endcase
                 count <= COUNT_RESET_VALUE;
                 phase <= phase + 1;
             end
-        STATE_READ_ACK:
+        STATE_READ_ACK_1,
+        STATE_READ_ACK_2,
+        STATE_READ_ACK_3,
+        STATE_READ_ACK_4:
             if (count != 0) begin
                 count <= count - 1;
             end else begin
@@ -130,13 +149,92 @@ always @(posedge clock) begin
                     nack_reg <= sda_input;
                 3: begin
                     scl_output_reg <= 0;
-                    if (~nack_reg & (data_index != 2)) begin
-                        data_index <= data_index + 1;
-                        data_bit_index <= 7;
-                        state <= STATE_WRITE;
-                    end else begin
+                    if (nack_reg) begin
                         state <= STATE_STOP;
+                    end else begin
+                        case (state)
+                        STATE_READ_ACK_1: begin
+                            data_write_reg <= register;
+                            data_bit_index <= 7;
+                            state <= STATE_WRITE_REGISTER;
+                        end
+                        STATE_READ_ACK_2: begin
+                            if (~rw) begin
+                                data_write_reg <= data_write;
+                                data_bit_index <= 7;
+                                state <= STATE_WRITE_DATA;
+                            end else begin
+                                state <= STATE_RESTART;
+                            end
+                        end
+                        STATE_READ_ACK_3: begin
+                            state <= STATE_STOP;
+                        end
+                        STATE_READ_ACK_4: begin
+                            data_bit_index <= 7;
+                            state <= STATE_READ_DATA;
+                        end
+                        endcase
                     end
+                end
+                endcase
+                count <= COUNT_RESET_VALUE;
+                phase <= phase + 1;
+            end
+        STATE_RESTART:
+            if (count != 0) begin
+                count <= count - 1;
+            end else begin
+                case (phase)
+                0:
+                    sda_output_reg <= 1;
+                1:
+                    scl_output_reg <= 1;
+                2:
+                    sda_output_reg <= 0;
+                3: begin
+                    scl_output_reg <= 0;
+                    data_write_reg <= { address, 1'b1 };
+                    data_bit_index <= 7;
+                    state <= STATE_WRITE_ADDRESS_READ;
+                end
+                endcase
+                count <= COUNT_RESET_VALUE;
+                phase <= phase + 1;
+            end
+        STATE_READ_DATA:
+            if (count != 0) begin
+                count <= count - 1;
+            end else begin
+                case (phase)
+                1:
+                    scl_output_reg <= 1;
+                2:
+                    data_read_reg <= (data_read_reg << 1) | sda_input;
+                3: begin
+                    scl_output_reg <= 0;
+                    if (data_bit_index != 0) begin
+                        data_bit_index <= data_bit_index - 1;
+                    end else begin
+                        state <= STATE_WRITE_NACK;
+                    end
+                end
+                endcase
+                count <= COUNT_RESET_VALUE;
+                phase <= phase + 1;
+            end
+        STATE_WRITE_NACK:
+            if (count != 0) begin
+                count <= count - 1;
+            end else begin
+                case (phase)
+                0:
+                    sda_output_reg <= 1;
+                1:
+                    scl_output_reg <= 1;
+                3: begin
+                    scl_output_reg <= 0;
+                    state <= STATE_STOP;
                 end
                 endcase
                 count <= COUNT_RESET_VALUE;
@@ -156,5 +254,6 @@ assign scl_output = scl_output_reg;
 assign sda_output = sda_output_reg;
 assign valid = valid_reg;
 assign nack = nack_reg;
+assign data_read = data_read_reg;
 
 endmodule
