@@ -1,0 +1,8 @@
+set PROJECT_NAME ADM-PCIE-KU3-Example
+
+set TOP_NAME Top
+
+set PART_NAME xcku060-ffva1156-2-e
+
+set HW_DEVICE_NAME xcku060_0
+set CFGMEM_PART_NAME pc28f00ag18-bpi-x16

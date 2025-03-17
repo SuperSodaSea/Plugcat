@@ -1,0 +1,7 @@
+set_property CFGBVS GND [current_design]
+set_property CONFIG_VOLTAGE 1.8 [current_design]
+set_property CONFIG_MODE BPI16 [current_design]
+set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN DIV-1 [current_design]
+set_property BITSTREAM.CONFIG.BPI_SYNC_MODE TYPE1 [current_design]
+set_property BITSTREAM.CONFIG.UNUSEDPIN Pullnone [current_design]
+set_property BITSTREAM.GENERAL.COMPRESS True [current_design]
