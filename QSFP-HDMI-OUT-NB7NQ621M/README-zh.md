@@ -32,8 +32,8 @@
 | TX3n    | HDMI D1-                          |
 | TX4p    | HDMI D2+                          |
 | TX4n    | HDMI D2-                          |
-| ModPrsL | 为低电平时，HDMI 线缆为插入状态    |
-| ResetL  | 为低电平时，重置 NB7NQ621M         |
+| ModPrsL | 为低电平时，HDMI 线缆为插入状态   |
+| ResetL  | 为低电平时，重置 NB7NQ621M        |
 | SCL     | NB7NQ621M 和 HDMI DDC 的 I2C 时钟 |
 | SDA     | NB7NQ621M 和 HDMI DDC 的 I2C 数据 |
 
@@ -45,7 +45,7 @@
 ## 已验证的 FPGA 板卡
 
 - Xilinx Kintex Ultrascale
-  - Alpha Data ADM-PCIE-KU3
+  - Alpha Data ADM-PCIE-KU3（含[示例代码](./examples/ADM-PCIE-KU3/)）
 - Xilinx Kintex UltraScale+
   - 博宸精芯 KU5P（含[示例代码](./examples/BoChenJingXin-KU5P/)）
 - Xilinx Virtex UltraScale+
