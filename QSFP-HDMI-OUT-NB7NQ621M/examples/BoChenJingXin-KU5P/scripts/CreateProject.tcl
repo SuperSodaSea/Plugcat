@@ -18,7 +18,7 @@ set_property VERILOG_DEFINE [list \
 set_property top $TOP_NAME [current_fileset]
 
 add_files -fileset sources_1 \
-    [glob $PROJECT_PATH/../../../common/Vivado/sources/*/*.v] \
+    [glob $PROJECT_PATH/../../../common/Verilog/*/*.v] \
     [glob $PROJECT_PATH/build/generated/*.sv] \
     [glob $PROJECT_PATH/sources/*.v]
 
