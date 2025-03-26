@@ -45,7 +45,7 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 ## Verified FPGA Boards
 
 - Xilinx Kintex Ultrascale
-  - Alpha Data ADM-PCIE-KU3（含[示例代码](./examples/ADM-PCIE-KU3/)）
+  - Alpha Data ADM-PCIE-KU3（with [Example Code](./examples/ADM-PCIE-KU3/)）
 - Xilinx Kintex UltraScale+
   - BoChenJingXin KU5P (with [Example Code](./examples/BoChenJingXin-KU5P/))
 - Xilinx Virtex UltraScale+
