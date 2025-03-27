@@ -47,19 +47,19 @@ wire system_reset_input = 0;
 
 wire system_clock;
 wire gt_config_clock;
-wire pll_0_locked;
+wire pll0_locked;
 
-PLL0 pll_0(
+PLL0 pll0(
     .clk_in1_p (clock_100_p),
     .clk_in1_n (clock_100_n),
     .reset (system_reset_input),
     .clk_out1 (system_clock),
     .clk_out2 (gt_config_clock),
-    .locked (pll_0_locked)
+    .locked (pll0_locked)
 );
 
 
-wire system_reset = ~pll_0_locked;
+wire system_reset = ~pll0_locked;
 
 wire [1:0] tx_clock;
 wire [1:0] tx_reset;

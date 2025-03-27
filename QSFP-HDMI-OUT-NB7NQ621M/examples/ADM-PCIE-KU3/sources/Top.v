@@ -51,15 +51,15 @@ wire system_reset_input = 0;
 
 wire system_clock;
 wire gt_config_clock;
-wire mmcm_0_locked;
+wire mmcm0_locked;
 
-MMCM0 mmcm_0(
+MMCM0 mmcm0(
     .clk_in1_p (clock_200_p),
     .clk_in1_n (clock_200_n),
     .reset (system_reset_input),
     .clk_out1 (system_clock),
     .clk_out2 (gt_config_clock),
-    .locked (mmcm_0_locked)
+    .locked (mmcm0_locked)
 );
 
 
@@ -88,7 +88,7 @@ Si5338 #(
     .REFERENCE_CLOCK_FREQUENCY (REFERENCE_CLOCK_FREQUENCY)
 ) si5338(
     .clock (system_clock),
-    .reset (~mmcm_0_locked),
+    .reset (~mmcm0_locked),
 
     .scl_input (si5338_scl_input),
     .scl_output (si5338_scl_output),

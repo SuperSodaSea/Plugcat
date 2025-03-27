@@ -31,18 +31,18 @@ wire system_reset_input = ~key[0];
 
 wire system_clock;
 wire gt_config_clock;
-wire mmcm_0_locked;
+wire mmcm0_locked;
 
-MMCM0 mmcm_0(
+MMCM0 mmcm0(
     .clk_in1 (clock_50),
     .reset (system_reset_input),
     .clk_out1 (system_clock),
     .clk_out2 (gt_config_clock),
-    .locked (mmcm_0_locked)
+    .locked (mmcm0_locked)
 );
 
 
-wire system_reset = ~mmcm_0_locked;
+wire system_reset = ~mmcm0_locked;
 
 wire tx_clock;
 wire tx_reset;
