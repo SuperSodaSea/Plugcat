@@ -44,40 +44,42 @@ wire [15:0] v_back_porch;
 wire h_sync_polarity;
 wire v_sync_polarity;
 
-if (RESOLUTION == "1920x1080") begin
-    assign h_active = 1920;
-    assign h_front_porch = 88;
-    assign h_sync = 44;
-    assign h_back_porch = 148;
-    assign v_active = 1080;
-    assign v_front_porch = 4;
-    assign v_sync = 5;
-    assign v_back_porch = 36;
-    assign h_sync_polarity = 1;
-    assign v_sync_polarity = 1;
-end else if (RESOLUTION == "2560x1440") begin
-    assign h_active = 2560;
-    assign h_front_porch = 8;
-    assign h_sync = 32;
-    assign h_back_porch = 120;
-    assign v_active = 1440;
-    assign v_front_porch = 13;
-    assign v_sync = 8;
-    assign v_back_porch = 29;
-    assign h_sync_polarity = 1;
-    assign v_sync_polarity = 1;
-end else if (RESOLUTION == "3840x2160") begin
-    assign h_active = 3840;
-    assign h_front_porch = 176;
-    assign h_sync = 88;
-    assign h_back_porch = 296;
-    assign v_active = 2160;
-    assign v_front_porch = 8;
-    assign v_sync = 10;
-    assign v_back_porch = 72;
-    assign h_sync_polarity = 1;
-    assign v_sync_polarity = 1;
-end
+generate
+    if (RESOLUTION == "1920x1080") begin
+        assign h_active = 1920;
+        assign h_front_porch = 88;
+        assign h_sync = 44;
+        assign h_back_porch = 148;
+        assign v_active = 1080;
+        assign v_front_porch = 4;
+        assign v_sync = 5;
+        assign v_back_porch = 36;
+        assign h_sync_polarity = 1;
+        assign v_sync_polarity = 1;
+    end else if (RESOLUTION == "2560x1440") begin
+        assign h_active = 2560;
+        assign h_front_porch = 8;
+        assign h_sync = 32;
+        assign h_back_porch = 120;
+        assign v_active = 1440;
+        assign v_front_porch = 13;
+        assign v_sync = 8;
+        assign v_back_porch = 29;
+        assign h_sync_polarity = 1;
+        assign v_sync_polarity = 1;
+    end else if (RESOLUTION == "3840x2160") begin
+        assign h_active = 3840;
+        assign h_front_porch = 176;
+        assign h_sync = 88;
+        assign h_back_porch = 296;
+        assign v_active = 2160;
+        assign v_front_porch = 8;
+        assign v_sync = 10;
+        assign v_back_porch = 72;
+        assign h_sync_polarity = 1;
+        assign v_sync_polarity = 1;
+    end
+endgenerate
 
 wire [15:0] refresh_rate = REFRESH_RATE;
 

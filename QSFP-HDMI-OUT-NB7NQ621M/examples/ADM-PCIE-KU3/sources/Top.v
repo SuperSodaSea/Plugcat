@@ -183,8 +183,10 @@ IOBUF qsfp1_sda_iobuf(
 wire [1:0] hpd = { ~qsfp1_modprsl, ~qsfp0_modprsl };
 wire [1:0] run;
 
+genvar i;
+
 generate
-    for (genvar i = 0; i < 2; i = i + 1) begin
+    for (i = 0; i < 2; i = i + 1) begin: hdmi_out_examples
         HDMIOUTExample #(
             .CLOCK_FREQUENCY (CLOCK_FREQUENCY),
             .RESOLUTION (`RESOLUTION),

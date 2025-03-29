@@ -140,8 +140,10 @@ begin
 end
 endfunction
 
+genvar i;
+
 generate
-    for (genvar i = 0; i < 4; i = i + 1) begin
+    for (i = 0; i < 4; i = i + 1) begin: generate_pixels
         wire [15:0] px = cx + i;
         wire [15:0] py = cy;
 
