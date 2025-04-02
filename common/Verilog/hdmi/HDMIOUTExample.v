@@ -183,7 +183,7 @@ always @(posedge system_clock) begin
                             i2c_ready <= 1;
                             i2c_address <= SCDC_ADDRESS;
                             i2c_data <= { 8'h02, 8'h01 }; // Source Version
-                            state <= STATE_RUN;
+                            state <= STATE_CHECK_HDMI_2_0;
                         end
                     end
                 end
