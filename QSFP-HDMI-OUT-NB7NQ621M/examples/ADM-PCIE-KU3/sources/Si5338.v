@@ -64,71 +64,73 @@ wire [17:0] MSN_P1;
 wire [29:0] MSN_P2;
 wire [29:0] MSN_P3;
 
-if (REFERENCE_CLOCK_FREQUENCY == 121_584_000) begin
-    assign P1DIV = 2; // P1 = 4
-    assign R0DIV = 0; // R0 = 1
-    assign R1DIV = 0; // R1 = 1
-    assign R2DIV = 0; // R2 = 1
-    assign R3DIV = 0; // R3 = 1
-    // PLL Parameters
-    assign PLL_KPHI = 61;
-    assign VCO_GAIN = 0;
-    assign RSEL = 0;
-    assign BWSEL = 0;
-    assign MSCAL = 4;
-     // MS0 = 20
-    assign MS0_P1 = 2048;
-    assign MS0_P2 = 0;
-    assign MS0_P3 = 1;
-    // MS1 = 9 + 2271/3125 = 9.72672
-    assign MS1_P1 = 733;
-    assign MS1_P2 = 63;
-    assign MS1_P3 = 3125;
-    // MS2 = 20
-    assign MS2_P1 = 2048;
-    assign MS2_P2 = 0;
-    assign MS2_P3 = 1;
-    // MS3 = 24 + 198/625 = 24.3168
-    assign MS3_P1 = 2600;
-    assign MS3_P2 = 344;
-    assign MS3_P3 = 625;
-    // MSN = 97 + 167/625 = 97.2672
-    assign MSN_P1 = 11938;
-    assign MSN_P2 = 126;
-    assign MSN_P3 = 625;
-end else if (REFERENCE_CLOCK_FREQUENCY == 148_500_000) begin
-    assign P1DIV = 2; // P1 = 4
-    assign R0DIV = 0; // R0 = 1
-    assign R1DIV = 0; // R1 = 1
-    assign R2DIV = 0; // R2 = 1
-    assign R3DIV = 0; // R3 = 1
-    // PLL Parameters
-    assign PLL_KPHI = 48;
-    assign VCO_GAIN = 1;
-    assign RSEL = 0;
-    assign BWSEL = 0;
-    assign MSCAL = 5;
-    // MS0 = 16
-    assign MS0_P1 = 1536;
-    assign MS0_P2 = 0;
-    assign MS0_P3 = 1;
-    // MS1 = 9 + 63/125 = 9.504
-    assign MS1_P1 = 704;
-    assign MS1_P2 = 64;
-    assign MS1_P3 = 125;
-    // MS2 = 16
-    assign MS2_P1 = 1536;
-    assign MS2_P2 = 0;
-    assign MS2_P3 = 1;
-    // MS3 = 23 + 19/25 = 23.76
-    assign MS3_P1 = 2529;
-    assign MS3_P2 = 7;
-    assign MS3_P3 = 25;
-    // MSN = 95 + 1/25 = 95.04
-    assign MSN_P1 = 11653;
-    assign MSN_P2 = 3;
-    assign MSN_P3 = 25;
-end
+generate
+    if (REFERENCE_CLOCK_FREQUENCY == 121_584_000) begin
+        assign P1DIV = 3'd2; // P1 = 4
+        assign R0DIV = 3'd0; // R0 = 1
+        assign R1DIV = 3'd0; // R1 = 1
+        assign R2DIV = 3'd0; // R2 = 1
+        assign R3DIV = 3'd0; // R3 = 1
+        // PLL Parameters
+        assign PLL_KPHI = 7'd61;
+        assign VCO_GAIN = 3'd0;
+        assign RSEL = 2'd0;
+        assign BWSEL = 2'd0;
+        assign MSCAL = 6'd4;
+        // MS0 = 20
+        assign MS0_P1 = 18'd2048;
+        assign MS0_P2 = 30'd0;
+        assign MS0_P3 = 30'd1;
+        // MS1 = 9 + 2271/3125 = 9.72672
+        assign MS1_P1 = 18'd733;
+        assign MS1_P2 = 30'd63;
+        assign MS1_P3 = 30'd3125;
+        // MS2 = 20
+        assign MS2_P1 = 18'd2048;
+        assign MS2_P2 = 30'd0;
+        assign MS2_P3 = 30'd1;
+        // MS3 = 24 + 198/625 = 24.3168
+        assign MS3_P1 = 18'd2600;
+        assign MS3_P2 = 30'd344;
+        assign MS3_P3 = 30'd625;
+        // MSN = 97 + 167/625 = 97.2672
+        assign MSN_P1 = 18'd11938;
+        assign MSN_P2 = 30'd126;
+        assign MSN_P3 = 30'd625;
+    end else if (REFERENCE_CLOCK_FREQUENCY == 148_500_000) begin
+        assign P1DIV = 3'd2; // P1 = 4
+        assign R0DIV = 3'd0; // R0 = 1
+        assign R1DIV = 3'd0; // R1 = 1
+        assign R2DIV = 3'd0; // R2 = 1
+        assign R3DIV = 3'd0; // R3 = 1
+        // PLL Parameters
+        assign PLL_KPHI = 7'd48;
+        assign VCO_GAIN = 3'd1;
+        assign RSEL = 2'd0;
+        assign BWSEL = 2'd0;
+        assign MSCAL = 6'd5;
+        // MS0 = 16
+        assign MS0_P1 = 18'd1536;
+        assign MS0_P2 = 30'd0;
+        assign MS0_P3 = 30'd1;
+        // MS1 = 9 + 63/125 = 9.504
+        assign MS1_P1 = 18'd704;
+        assign MS1_P2 = 30'd64;
+        assign MS1_P3 = 30'd125;
+        // MS2 = 16
+        assign MS2_P1 = 18'd1536;
+        assign MS2_P2 = 30'd0;
+        assign MS2_P3 = 30'd1;
+        // MS3 = 23 + 19/25 = 23.76
+        assign MS3_P1 = 18'd2529;
+        assign MS3_P2 = 30'd7;
+        assign MS3_P3 = 30'd25;
+        // MSN = 95 + 1/25 = 95.04
+        assign MSN_P1 = 18'd11653;
+        assign MSN_P2 = 30'd3;
+        assign MSN_P3 = 30'd25;
+    end
+endgenerate
 
 
 function [31:0] COMMANDS(

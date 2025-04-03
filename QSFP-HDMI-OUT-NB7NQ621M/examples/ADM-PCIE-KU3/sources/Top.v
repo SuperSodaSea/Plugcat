@@ -62,6 +62,18 @@ MMCM0 mmcm0(
     .locked (mmcm0_locked)
 );
 
+reg [2:0] system_reset_reg;
+
+always @(posedge system_clock) begin
+    if (~mmcm0_locked) begin
+        system_reset_reg <= 3'b111;
+    end else begin
+        system_reset_reg <= system_reset_reg >> 1;
+    end
+end
+
+wire system_reset = system_reset_reg[0];
+
 
 wire si5338_scl_input;
 wire si5338_scl_output;
@@ -88,7 +100,7 @@ Si5338 #(
     .REFERENCE_CLOCK_FREQUENCY (REFERENCE_CLOCK_FREQUENCY)
 ) si5338(
     .clock (system_clock),
-    .reset (~mmcm0_locked),
+    .reset (system_reset),
 
     .scl_input (si5338_scl_input),
     .scl_output (si5338_scl_output),
@@ -99,26 +111,13 @@ Si5338 #(
 );
 
 
-reg [2:0] system_reset_reg;
-
-always @(posedge system_clock) begin
-    if (~si5338_ready) begin
-        system_reset_reg <= 3'b111;
-    end else begin
-        system_reset_reg <= system_reset_reg >> 1;
-    end
-end
-
-wire system_reset = system_reset_reg[0];
-
-
 wire [1:0] tx_clock;
 wire [1:0] tx_reset;
 wire [159:0] tx_data[1:0];
 
 GTWizardWrapper0 gt_wizard_wrapper_0(
     .clock (gt_config_clock),
-    .reset (system_reset),
+    .reset (~si5338_ready),
 
     .refclk_p (qsfp0_refclk_p),
     .refclk_n (qsfp0_refclk_n),
@@ -134,7 +133,7 @@ GTWizardWrapper0 gt_wizard_wrapper_0(
 
 GTWizardWrapper1 gt_wizard_wrapper_1(
     .clock (gt_config_clock),
-    .reset (system_reset),
+    .reset (~si5338_ready),
 
     .refclk_p (qsfp1_refclk_p),
     .refclk_n (qsfp1_refclk_n),
