@@ -40,11 +40,14 @@ class HDMITMDSScramblerUnit(channel: Int) extends Module {
         val output = Output(new HDMITMDSEncoderInput)
     })
 
-    io.output.input_type := HDMITMDSEncoderInputType.BYPASS
-    io.output.counter_reset := true.B
-    io.output.tmds := 0.U
-    io.output.terc4 := 0.U
-    io.output.bypass := 0.U
+    val output = Reg(new HDMITMDSEncoderInput)
+    io.output := output
+
+    output.input_type := HDMITMDSEncoderInputType.BYPASS
+    output.counter_reset := true.B
+    output.tmds := 0.U
+    output.terc4 := 0.U
+    output.bypass := 0.U
 
     when (~io.input.scrambler_enable) {
         io.output_state.lfsr := HDMITMDSScrambler.seed(channel)
@@ -52,28 +55,28 @@ class HDMITMDSScramblerUnit(channel: Int) extends Module {
 
         switch (io.input.input_type) {
         is (HDMITMDSScramblerInputType.VIDEO_DATA) {
-            io.output.input_type := HDMITMDSEncoderInputType.TMDS
-            io.output.counter_reset := false.B
-            io.output.tmds := io.input.video_data
+            output.input_type := HDMITMDSEncoderInputType.TMDS
+            output.counter_reset := false.B
+            output.tmds := io.input.video_data
         }
         is (HDMITMDSScramblerInputType.VIDEO_DATA_GUARD_BAND) {
-            io.output.input_type := HDMITMDSEncoderInputType.BYPASS
-            io.output.counter_reset := true.B
-            io.output.bypass := (channel match {
+            output.input_type := HDMITMDSEncoderInputType.BYPASS
+            output.counter_reset := true.B
+            output.bypass := (channel match {
                 case 0 => "b1011001100".U
                 case 1 => "b0100110011".U
                 case 2 => "b1011001100".U
             })
         }
         is (HDMITMDSScramblerInputType.DATA_ISLAND) {
-            io.output.input_type := HDMITMDSEncoderInputType.TERC4
-            io.output.counter_reset := true.B
-            io.output.terc4 := io.input.data_island
+            output.input_type := HDMITMDSEncoderInputType.TERC4
+            output.counter_reset := true.B
+            output.terc4 := io.input.data_island
         }
         is (HDMITMDSScramblerInputType.DATA_ISLAND_GUARD_BAND) {
-            io.output.input_type := HDMITMDSEncoderInputType.BYPASS
-            io.output.counter_reset := true.B
-            io.output.bypass := "b0100110011".U
+            output.input_type := HDMITMDSEncoderInputType.BYPASS
+            output.counter_reset := true.B
+            output.bypass := "b0100110011".U
         }
         is (HDMITMDSScramblerInputType.CONTROL) {
             val CONTROL_ENCODING = VecInit(
@@ -83,9 +86,9 @@ class HDMITMDSScramblerUnit(channel: Int) extends Module {
                 "b1010101011".U,
             )
 
-            io.output.input_type := HDMITMDSEncoderInputType.BYPASS
-            io.output.counter_reset := true.B
-            io.output.bypass := CONTROL_ENCODING(io.input.control)
+            output.input_type := HDMITMDSEncoderInputType.BYPASS
+            output.counter_reset := true.B
+            output.bypass := CONTROL_ENCODING(io.input.control)
         }
         }
     } .otherwise {
@@ -96,28 +99,28 @@ class HDMITMDSScramblerUnit(channel: Int) extends Module {
 
         switch (io.input.input_type) {
         is (HDMITMDSScramblerInputType.VIDEO_DATA) {
-            io.output.input_type := HDMITMDSEncoderInputType.TMDS
-            io.output.counter_reset := false.B
-            io.output.tmds := io.input.video_data ^ Reverse(lfsr(15, 8))
+            output.input_type := HDMITMDSEncoderInputType.TMDS
+            output.counter_reset := false.B
+            output.tmds := io.input.video_data ^ Reverse(lfsr(15, 8))
         }
         is (HDMITMDSScramblerInputType.VIDEO_DATA_GUARD_BAND) {
-            io.output.input_type := HDMITMDSEncoderInputType.TMDS
-            io.output.counter_reset := false.B
-            io.output.tmds := (channel match {
+            output.input_type := HDMITMDSEncoderInputType.TMDS
+            output.counter_reset := false.B
+            output.tmds := (channel match {
                 case 0 => "b10101011".U
                 case 1 => "b01010101".U
                 case 2 => "b10101011".U
             }) ^ Reverse(lfsr(15, 8))
         }
         is (HDMITMDSScramblerInputType.DATA_ISLAND) {
-            io.output.input_type := HDMITMDSEncoderInputType.TERC4
-            io.output.counter_reset := false.B
-            io.output.terc4 := io.input.data_island ^ Reverse(lfsr(15, 12))
+            output.input_type := HDMITMDSEncoderInputType.TERC4
+            output.counter_reset := false.B
+            output.terc4 := io.input.data_island ^ Reverse(lfsr(15, 12))
         }
         is (HDMITMDSScramblerInputType.DATA_ISLAND_GUARD_BAND) {
-            io.output.input_type := HDMITMDSEncoderInputType.TMDS
-            io.output.counter_reset := false.B
-            io.output.tmds := "b01010101".U ^ Reverse(lfsr(15, 8))
+            output.input_type := HDMITMDSEncoderInputType.TMDS
+            output.counter_reset := false.B
+            output.tmds := "b01010101".U ^ Reverse(lfsr(15, 8))
         }
         is (HDMITMDSScramblerInputType.CONTROL) {
             val SCRAMBLED_CONTROL_ENCODING = VecInit(
@@ -154,9 +157,9 @@ class HDMITMDSScramblerUnit(channel: Int) extends Module {
             val control_vector = Cat(io.input.control, channel.U(2.W))
             val scv = Cat(control_vector ^ Reverse(lfsr(14, 11)), itoggle)
 
-            io.output.input_type := HDMITMDSEncoderInputType.BYPASS
-            io.output.counter_reset := true.B
-            io.output.bypass := SCRAMBLED_CONTROL_ENCODING(scv(4, 1)) ^ Fill(10, scv(0))
+            output.input_type := HDMITMDSEncoderInputType.BYPASS
+            output.counter_reset := true.B
+            output.bypass := SCRAMBLED_CONTROL_ENCODING(scv(4, 1)) ^ Fill(10, scv(0))
         }
         }
     }

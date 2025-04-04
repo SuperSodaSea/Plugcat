@@ -29,11 +29,9 @@ class HDMITMDSEncoderUnit extends Module {
         val output = Output(UInt(10.W))
     })
 
-    io.output_state.count := Mux(io.input.counter_reset, 0.S, io.input_state.count)
-    io.output := 0.U
+    val q_m = Reg(UInt(9.W))
 
-    switch (io.input.input_type) {
-    is (HDMITMDSEncoderInputType.TMDS) {
+    when (io.input.input_type === HDMITMDSEncoderInputType.TMDS) {
         val d = io.input.tmds
         val n1_d = PopCount(d)
 
@@ -43,11 +41,20 @@ class HDMITMDSEncoderUnit extends Module {
         for (j <- 1 to 7)
             q_m_b(j) := q_m_b(j - 1) ^ d(j) ^ b0
         q_m_b(8) := ~b0
-        val q_m = q_m_b.asUInt
+        q_m := q_m_b.asUInt
+    }
 
+    val input_reg = RegNext(io.input)
+
+    io.output_state.count := Mux(input_reg.counter_reset, 0.S, io.input_state.count)
+
+    val output = Reg(UInt(10.W))
+    io.output := output
+
+    switch (input_reg.input_type) {
+    is (HDMITMDSEncoderInputType.TMDS) {
         val n1_q_m = PopCount(q_m(7, 0))
 
-        val output = io.output
         val delta = 2.S * n1_q_m - 8.S
         val count = io.input_state.count
         when (count === 0.S | n1_q_m === 4.U) {
@@ -85,10 +92,10 @@ class HDMITMDSEncoderUnit extends Module {
             "b1011000011".U,
         )
 
-        io.output := TERC4_ENCODING(io.input.terc4)
+        output := TERC4_ENCODING(input_reg.terc4)
     }
     is (HDMITMDSEncoderInputType.BYPASS) {
-        io.output := io.input.bypass
+        output := input_reg.bypass
     }
     }
 }
