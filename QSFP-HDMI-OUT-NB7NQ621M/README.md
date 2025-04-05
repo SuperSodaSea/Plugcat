@@ -52,6 +52,8 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
   - Alibaba VU13P (with [Example Code](./examples/Alibaba-VU13P/))
 - Altera Stratix V GS
   - Microsoft Catapult v2 Storey Peak / X930613-001
+- Altera Arria 10 GX
+  - Microsoft Catapult v3 Longs Peak / Model: 1768
 
 ## Example Code
 
