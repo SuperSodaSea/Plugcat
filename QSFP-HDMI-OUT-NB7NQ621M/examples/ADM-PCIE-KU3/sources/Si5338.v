@@ -310,6 +310,9 @@ I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(100_000)) i2c_master(
     .sda_input (sda_input),
     .sda_output (sda_output),
 
+    .request (),
+    .grant (1'b1),
+
     .valid (i2c_valid),
     .ready (i2c_ready),
     .address (SI5338_ADDRESS),

@@ -101,6 +101,8 @@ HDMIOUTExample #(
     .scl_output (qsfp_scl_output),
     .sda_input (qsfp_sda_input),
     .sda_output (qsfp_sda_output),
+    .i2c_request (),
+    .i2c_grant (1'b1),
     .run (run)
 );
 

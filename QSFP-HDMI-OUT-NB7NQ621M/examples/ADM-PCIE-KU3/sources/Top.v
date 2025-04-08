@@ -201,6 +201,8 @@ generate
             .scl_output (qsfp_scl_output[i]),
             .sda_input (qsfp_sda_input[i]),
             .sda_output (qsfp_sda_output[i]),
+            .i2c_request (),
+            .i2c_grant (1'b1),
             .run (run[i])
         );
     end

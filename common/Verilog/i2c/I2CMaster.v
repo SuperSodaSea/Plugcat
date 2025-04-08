@@ -10,6 +10,9 @@ module I2CMaster #(
     input sda_input,
     output sda_output,
 
+    output request,
+    input grant,
+
     output valid,
     input ready,
     input [6:0] address,
@@ -22,25 +25,27 @@ module I2CMaster #(
 
 localparam
     STATE_IDLE = 0,
-    STATE_START = 1,
-    STATE_STOP = 2,
-    STATE_WRITE_ADDRESS_WRITE = 3,
-    STATE_READ_ACK_1 = 4,
-    STATE_WRITE_REGISTER = 5,
-    STATE_READ_ACK_2 = 6,
-    STATE_WRITE_DATA = 7,
-    STATE_READ_ACK_3 = 8,
-    STATE_RESTART = 9,
-    STATE_WRITE_ADDRESS_READ = 10,
-    STATE_READ_ACK_4 = 11,
-    STATE_READ_DATA = 12,
-    STATE_WRITE_NACK = 13,
-    STATE_DONE = 14;
+    STATE_WAIT_ARBITRATION = 1,
+    STATE_START = 2,
+    STATE_STOP = 3,
+    STATE_WRITE_ADDRESS_WRITE = 4,
+    STATE_READ_ACK_1 = 5,
+    STATE_WRITE_REGISTER = 6,
+    STATE_READ_ACK_2 = 7,
+    STATE_WRITE_DATA = 8,
+    STATE_READ_ACK_3 = 9,
+    STATE_RESTART = 10,
+    STATE_WRITE_ADDRESS_READ = 11,
+    STATE_READ_ACK_4 = 12,
+    STATE_READ_DATA = 13,
+    STATE_WRITE_NACK = 14,
+    STATE_DONE = 15;
 
 localparam COUNT_RESET_VALUE = CLOCK_FREQUENCY / FREQUENCY / 4 - 1;
 
 reg scl_output_reg;
 reg sda_output_reg;
+reg request_reg;
 reg valid_reg;
 reg nack_reg;
 reg [7:0] data_read_reg;
@@ -57,15 +62,21 @@ always @(posedge clock) begin
         state <= STATE_IDLE;
         scl_output_reg <= 1;
         sda_output_reg <= 1;
+        request_reg <= 0;
         valid_reg <= 0;
         nack_reg <= 0;
     end else begin
         case (state)
         STATE_IDLE:
             if (ready) begin
-                state <= STATE_START;
+                request_reg <= 1;
+                state <= STATE_WAIT_ARBITRATION;
+            end
+        STATE_WAIT_ARBITRATION:
+            if (grant) begin
                 count <= COUNT_RESET_VALUE;
                 phase <= 0;
+                state <= STATE_START;
             end
         STATE_START:
             if (count != 0) begin
@@ -241,6 +252,7 @@ always @(posedge clock) begin
                 phase <= phase + 1;
             end
         STATE_DONE: begin
+            request_reg <= 0;
             valid_reg <= 0;
             state <= STATE_IDLE;
         end
@@ -252,6 +264,7 @@ end
 
 assign scl_output = scl_output_reg;
 assign sda_output = sda_output_reg;
+assign request = request_reg;
 assign valid = valid_reg;
 assign nack = nack_reg;
 assign data_read = data_read_reg;

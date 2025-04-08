@@ -16,6 +16,9 @@ module HDMIOUTExample #(
     input sda_input,
     output sda_output,
 
+    output i2c_request,
+    input i2c_grant,
+
     output run
 );
 
@@ -125,6 +128,9 @@ I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(100_000)) i2c_master(
     .scl_output (scl_output),
     .sda_input (sda_input),
     .sda_output (sda_output),
+
+    .request (i2c_request),
+    .grant (i2c_grant),
 
     .valid (i2c_valid),
     .ready (i2c_ready),
