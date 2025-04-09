@@ -44,6 +44,8 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 
 ## Verified FPGA Boards
 
+- Xilinx Zynq 7000 SoC
+  - GongZiGe XuanWu ZYNQ7100 + FMC to QSFP daughter board
 - Xilinx Kintex Ultrascale
   - Alpha Data ADM-PCIE-KU3（with [Example Code](./examples/ADM-PCIE-KU3/)）
 - Xilinx Kintex UltraScale+

@@ -44,6 +44,8 @@
 
 ## 已验证的 FPGA 板卡
 
+- Xilinx Zynq 7000 SoC
+  - 公子哥 玄武 ZYNQ7100 + FMC 转 QSFP 子板
 - Xilinx Kintex Ultrascale
   - Alpha Data ADM-PCIE-KU3（含[示例代码](./examples/ADM-PCIE-KU3/)）
 - Xilinx Kintex UltraScale+
