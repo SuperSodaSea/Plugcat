@@ -1,0 +1,25 @@
+create_system XCVR0
+
+add_instance inst altera_xcvr_native_sv
+set_instance_property inst AUTO_EXPORT true
+
+# Datapath Options
+set_instance_parameter_value inst tx_enable 1
+set_instance_parameter_value inst rx_enable 0
+set_instance_parameter_value inst enable_std 1
+set_instance_parameter_value inst enable_teng 0
+set_instance_parameter_value inst channels 4
+set_instance_parameter_value inst bonded_mode xN
+set_instance_parameter_value inst enable_simple_interface 1
+
+# PMA
+set_instance_parameter_value inst set_data_rate $XCVR0_DATA_RATE
+set_instance_parameter_value inst tx_pma_clk_div 1
+set_instance_parameter_value inst gui_pll_reconfig_pll0_refclk_freq $XCVR0_REFERENCE_CLOCK_FREQUENCY
+
+# Standard PCS
+set_instance_parameter_value inst std_protocol_hint basic
+set_instance_parameter_value inst std_pcs_pma_width 20
+set_instance_parameter_value inst std_tx_byte_ser_enable 1
+
+save_system $SYSTEM_PATH/XCVR0.qsys

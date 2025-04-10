@@ -1,0 +1,8 @@
+create_system XCVRReconfiguration0
+
+add_instance inst alt_xcvr_reconfig
+set_instance_property inst AUTO_EXPORT true
+
+set_instance_parameter_value inst number_of_reconfig_interfaces 10
+
+save_system $SYSTEM_PATH/XCVRReconfiguration0.qsys

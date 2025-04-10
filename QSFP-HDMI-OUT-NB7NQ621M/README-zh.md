@@ -53,7 +53,7 @@
 - Xilinx Virtex UltraScale+
   - 阿里巴巴 VU13P（含[示例代码](./examples/Alibaba-VU13P/)）
 - Altera Stratix V GS
-  - 微软 Catapult v2 Storey Peak / X930613-001
+  - 微软 Catapult v2 Storey Peak / X930613-001（含[示例代码](./examples/Storey-Peak/)）
 - Altera Arria 10 GX
   - 微软 Catapult v3 Longs Peak / Model: 1768
 
