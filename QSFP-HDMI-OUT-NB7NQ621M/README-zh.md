@@ -55,7 +55,7 @@
 - Altera Stratix V GS
   - 微软 Catapult v2 Storey Peak / X930613-001（含[示例代码](./examples/Storey-Peak/)）
 - Altera Arria 10 GX
-  - 微软 Catapult v3 Longs Peak / Model: 1768
+  - 微软 Catapult v3 Longs Peak / Model: 1768（含[示例代码](./examples/Longs-Peak/)）
 
 ## 示例代码
 
