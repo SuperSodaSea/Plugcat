@@ -85,7 +85,7 @@ IOBUF qsfp_sda_iobuf(
 
 wire hpd = ~qsfp_modprsl;
 wire run;
-assign qsfp_resetl = ~system_reset;
+
 HDMIOUTExample #(
     .CLOCK_FREQUENCY (CLOCK_FREQUENCY),
     .RESOLUTION (`RESOLUTION),
@@ -106,6 +106,12 @@ HDMIOUTExample #(
     .run (run)
 );
 
-assign led = { ~system_reset & run, ~system_reset & hpd & ~run, ~system_reset };
+assign qsfp_resetl = ~system_reset;
+
+assign led = {
+    ~system_reset & run,
+    ~system_reset & hpd & ~run,
+    ~system_reset
+};
 
 endmodule

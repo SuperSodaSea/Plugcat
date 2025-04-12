@@ -121,6 +121,7 @@ DS250DF810 #(
 
 wire hpd = ~qsfp_modprsl;
 wire run;
+
 HDMIOUTExample #(
     .CLOCK_FREQUENCY (CLOCK_FREQUENCY),
     .RESOLUTION (`RESOLUTION),

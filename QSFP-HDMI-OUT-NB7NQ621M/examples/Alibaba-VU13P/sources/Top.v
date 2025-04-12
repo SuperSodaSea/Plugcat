@@ -159,7 +159,7 @@ generate
 endgenerate
 
 assign led_run = ~system_reset;
-assign led = 0;
+assign led = 8'b0;
 
 assign qsfp1_resetl = ~system_reset;
 assign qsfp1_led_y = ~system_reset & hpd[0] & ~run[0];
