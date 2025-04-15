@@ -67,6 +67,7 @@
 - [Java](https://www.java.com/)（用于 Chisel）
 - [Mill](https://mill-build.org/mill/index.html)（用于 Chisel）
 - [Vivado](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html)（用于构建 Xilinx FPGA 工程）
+- [Quartus Prime](https://www.intel.com/content/www/us/en/products/details/fpga/development-tools/quartus-prime.html)（用于构建 Altera FPGA 工程）
 
 ### 构建示例代码
 

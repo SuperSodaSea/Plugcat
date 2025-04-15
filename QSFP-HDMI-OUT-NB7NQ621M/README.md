@@ -67,6 +67,7 @@ The example code can be built on both Windows and Linux.
 - [Java](https://www.java.com/) (for Chisel)
 - [Mill](https://mill-build.org/mill/index.html) (for Chisel)
 - [Vivado](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html) (for building Xilinx FPGA projects)
+- [Quartus Prime](https://www.intel.com/content/www/us/en/products/details/fpga/development-tools/quartus-prime.html) (for building Altera FPGA projects)
 
 ### Build Example Code
 
