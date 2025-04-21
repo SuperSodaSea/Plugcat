@@ -56,6 +56,8 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
   - Microsoft Catapult v2 Storey Peak / X930613-001 (with [Example Code](./examples/Storey-Peak/))
 - Altera Arria 10 GX
   - Microsoft Catapult v3 Longs Peak / Model: 1768 (with [Example Code](./examples/Longs-Peak/))
+- Pango Titan-2
+  - XiaoYanJing Titan 390H + FMC to QSFP daughter board
 
 ## Example Code
 

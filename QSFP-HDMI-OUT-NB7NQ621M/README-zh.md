@@ -56,6 +56,8 @@
   - 微软 Catapult v2 Storey Peak / X930613-001（含[示例代码](./examples/Storey-Peak/)）
 - Altera Arria 10 GX
   - 微软 Catapult v3 Longs Peak / Model: 1768（含[示例代码](./examples/Longs-Peak/)）
+- 紫光同创 Titan-2
+  - 小眼睛泰坦 390H + FMC 转 QSFP 子板
 
 ## 示例代码
 
