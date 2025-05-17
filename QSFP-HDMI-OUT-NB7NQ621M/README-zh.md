@@ -50,6 +50,7 @@
   - Alpha Data ADM-PCIE-KU3（含[示例代码](./examples/ADM-PCIE-KU3/)）
 - Xilinx Kintex UltraScale+
   - 博宸精芯 KU5P（含[示例代码](./examples/BoChenJingXin-KU5P/)）
+  - RIGUKE RK-XCKU5P-F（含[示例代码](./examples/RK-XCKU5P-F/)）
 - Xilinx Virtex UltraScale+
   - 阿里巴巴 VU13P（含[示例代码](./examples/Alibaba-VU13P/)）
 - Altera Stratix V GS
