@@ -1,0 +1,5 @@
+set_property PACKAGE_PIN H9 [get_ports led[0]]
+set_property PACKAGE_PIN J9 [get_ports led[1]]
+set_property PACKAGE_PIN G11 [get_ports led[2]]
+set_property PACKAGE_PIN H11 [get_ports led[3]]
+set_property IOSTANDARD LVCMOS33 [get_ports led[*]]

@@ -1,0 +1,5 @@
+set_property PACKAGE_PIN K9 [get_ports key[0]]
+set_property PACKAGE_PIN K10 [get_ports key[1]]
+set_property PACKAGE_PIN J10 [get_ports key[1]]
+set_property PACKAGE_PIN J11 [get_ports key[1]]
+set_property IOSTANDARD LVCMOS33 [get_ports key[*]]
