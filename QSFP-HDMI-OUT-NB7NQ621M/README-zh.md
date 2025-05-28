@@ -51,6 +51,7 @@
 - Xilinx Kintex UltraScale+
   - 博宸精芯 KU5P（含[示例代码](./examples/BoChenJingXin-KU5P/)）
   - RIGUKE RK-XCKU5P-F（含[示例代码](./examples/RK-XCKU5P-F/)）
+  - 米联客 MLK-H8-CU06-KU5P（含[示例代码](./examples/MLK-H8-CU06-KU5P/)）
 - Xilinx Virtex UltraScale+
   - 阿里巴巴 VU13P（含[示例代码](./examples/Alibaba-VU13P/)）
 - Altera Stratix V GS

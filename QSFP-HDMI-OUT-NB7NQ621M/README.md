@@ -51,6 +51,7 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 - Xilinx Kintex UltraScale+
   - BoChenJingXin KU5P (with [Example Code](./examples/BoChenJingXin-KU5P/))
   - RIGUKE RK-XCKU5P-F（with [Example Code](./examples/RK-XCKU5P-F/)）
+  - Milianke MLK-H8-CU06-KU5P（with [Example Code](./examples/MLK-H8-CU06-KU5P/)）
 - Xilinx Virtex UltraScale+
   - Alibaba VU13P (with [Example Code](./examples/Alibaba-VU13P/))
 - Altera Stratix V GS
