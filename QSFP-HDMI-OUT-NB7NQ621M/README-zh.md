@@ -44,22 +44,83 @@
 
 ## 已验证的 FPGA 板卡
 
-- Xilinx Zynq 7000 SoC
-  - 公子哥 玄武 ZYNQ7100 + FMC 转 QSFP 子板
-- Xilinx Kintex Ultrascale
-  - Alpha Data ADM-PCIE-KU3（含[示例代码](./examples/ADM-PCIE-KU3/)）
-- Xilinx Kintex UltraScale+
-  - 博宸精芯 KU5P（含[示例代码](./examples/BoChenJingXin-KU5P/)）
-  - RIGUKE RK-XCKU5P-F（含[示例代码](./examples/RK-XCKU5P-F/)）
-  - 米联客 MLK-H8-CU06-KU5P（含[示例代码](./examples/MLK-H8-CU06-KU5P/)）
-- Xilinx Virtex UltraScale+
-  - 阿里巴巴 VU13P（含[示例代码](./examples/Alibaba-VU13P/)）
-- Altera Stratix V GS
-  - 微软 Catapult v2 Storey Peak / X930613-001（含[示例代码](./examples/Storey-Peak/)）
-- Altera Arria 10 GX
-  - 微软 Catapult v3 Longs Peak / Model: 1768（含[示例代码](./examples/Longs-Peak/)）
-- 紫光同创 Titan-2
-  - 小眼睛泰坦 390H + FMC 转 QSFP 子板
+<table>
+  <thead>
+    <tr>
+      <th>FPGA</th>
+      <th>板卡</th>
+      <th>示例代码</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Zynq 7000 SoC</th>
+    </tr>
+    <tr>
+      <td>XC7Z100</td>
+      <td>公子哥 玄武 ZYNQ7100 + FMC 转 QSFP 子板</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Kintex Ultrascale</th>
+    </tr>
+    <tr>
+      <td>XCKU060</td>
+      <td>Alpha Data ADM-PCIE-KU3</td>
+      <td align="center"><a href="./examples/ADM-PCIE-KU3/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Kintex UltraScale+</th>
+    </tr>
+    <tr>
+      <td>XCKU5P</td>
+      <td>博宸精芯 KU5P</td>
+      <td align="center"><a href="./examples/BoChenJingXin-KU5P/">🔗</a></td>
+    </tr>
+    <tr>
+      <td>XCKU5P</td>
+      <td>RIGUKE RK-XCKU5P-F</td>
+      <td align="center"><a href="./examples/RK-XCKU5P-F/">🔗</a></td>
+    </tr>
+    <tr>
+      <td>XCKU5P</td>
+      <td>米联客 MLK-H8-CU06-KU5P</td>
+      <td align="center"><a href="./examples/MLK-H8-CU06-KU5P/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Virtex UltraScale+</th>
+    </tr>
+    <tr>
+      <td>XCVU13P</td>
+      <td>阿里巴巴 VU13P</td>
+      <td align="center"><a href="./examples/Alibaba-VU13P/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Altera Stratix V GS</th>
+    </tr>
+    <tr>
+      <td>5SGSKF40I3LNAC</td>
+      <td>微软 Catapult v2 Storey Peak / X930613-001</td>
+      <td align="center"><a href="./examples/Storey-Peak/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Altera Arria 10 GX</th>
+    </tr>
+    <tr>
+      <td>10AXF40AA</td>
+      <td>微软 Catapult v3 Longs Peak / Model: 1768</td>
+      <td align="center"><a href="./examples/Longs-Peak/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">紫光同创 Titan-2</th>
+    </tr>
+    <tr>
+      <td>PG2T390H</td>
+      <td>小眼睛泰坦 390H + FMC 转 QSFP 子板</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 ## 示例代码
 

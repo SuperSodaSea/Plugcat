@@ -44,22 +44,83 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
 
 ## Verified FPGA Boards
 
-- Xilinx Zynq 7000 SoC
-  - GongZiGe XuanWu ZYNQ7100 + FMC to QSFP daughter board
-- Xilinx Kintex Ultrascale
-  - Alpha Data ADM-PCIE-KU3（with [Example Code](./examples/ADM-PCIE-KU3/)）
-- Xilinx Kintex UltraScale+
-  - BoChenJingXin KU5P (with [Example Code](./examples/BoChenJingXin-KU5P/))
-  - RIGUKE RK-XCKU5P-F（with [Example Code](./examples/RK-XCKU5P-F/)）
-  - Milianke MLK-H8-CU06-KU5P（with [Example Code](./examples/MLK-H8-CU06-KU5P/)）
-- Xilinx Virtex UltraScale+
-  - Alibaba VU13P (with [Example Code](./examples/Alibaba-VU13P/))
-- Altera Stratix V GS
-  - Microsoft Catapult v2 Storey Peak / X930613-001 (with [Example Code](./examples/Storey-Peak/))
-- Altera Arria 10 GX
-  - Microsoft Catapult v3 Longs Peak / Model: 1768 (with [Example Code](./examples/Longs-Peak/))
-- Pango Titan-2
-  - XiaoYanJing Titan 390H + FMC to QSFP daughter board
+<table>
+  <thead>
+    <tr>
+      <th>FPGA</th>
+      <th>Board</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Zynq 7000 SoC</th>
+    </tr>
+    <tr>
+      <td>XC7Z100</td>
+      <td>GongZiGe XuanWu ZYNQ7100 + FMC to QSFP daughter board</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Kintex Ultrascale</th>
+    </tr>
+    <tr>
+      <td>XCKU060</td>
+      <td>Alpha Data ADM-PCIE-KU3</td>
+      <td align="center"><a href="./examples/ADM-PCIE-KU3/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Kintex UltraScale+</th>
+    </tr>
+    <tr>
+      <td>XCKU5P</td>
+      <td>BoChenJingXin KU5P</td>
+      <td align="center"><a href="./examples/BoChenJingXin-KU5P/">🔗</a></td>
+    </tr>
+    <tr>
+      <td>XCKU5P</td>
+      <td>RIGUKE RK-XCKU5P-F</td>
+      <td align="center"><a href="./examples/RK-XCKU5P-F/">🔗</a></td>
+    </tr>
+    <tr>
+      <td>XCKU5P</td>
+      <td>Milianke MLK-H8-CU06-KU5P</td>
+      <td align="center"><a href="./examples/MLK-H8-CU06-KU5P/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Virtex UltraScale+</th>
+    </tr>
+    <tr>
+      <td>XCVU13P</td>
+      <td>Alibaba VU13P</td>
+      <td align="center"><a href="./examples/Alibaba-VU13P/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Altera Stratix V GS</th>
+    </tr>
+    <tr>
+      <td>5SGSKF40I3LNAC</td>
+      <td>Microsoft Catapult v2 Storey Peak / X930613-001</td>
+      <td align="center"><a href="./examples/Storey-Peak/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Altera Arria 10 GX</th>
+    </tr>
+    <tr>
+      <td>10AXF40AA</td>
+      <td>Microsoft Catapult v3 Longs Peak / Model: 1768</td>
+      <td align="center"><a href="./examples/Longs-Peak/">🔗</a></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="rowgroup">Pango Titan-2</th>
+    </tr>
+    <tr>
+      <td>PG2T390H</td>
+      <td>XiaoYanJing Titan 390H + FMC to QSFP daughter board</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Example Code
 
