@@ -1,8 +1,9 @@
 (footprint "QSFP-Plug"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
+	(descr "SFF-8662 QSFP Plug")
 	(property "Reference" "REF**"
 		(at 0 0.77 0)
 		(unlocked yes)
@@ -21,19 +22,6 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "40eea8c8-0417-44fb-adc2-bc60e5009cdf")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 1.27 0)
-		(unlocked yes)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "1175abac-0fba-4dcc-a30b-4d523b130117")
 		(effects
 			(font
 				(size 1 1)
@@ -75,9 +63,9 @@
 			(width 0)
 			(type solid)
 		)
-		(fill solid)
-		(layer "B.Mask")
-		(uuid "65be88d5-5b94-4f24-b120-ebd6e213f8e9")
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "9e5b8b3b-6624-402d-a28d-6097f97bd629")
 	)
 	(fp_poly
 		(pts
@@ -87,9 +75,9 @@
 			(width 0)
 			(type solid)
 		)
-		(fill solid)
-		(layer "F.Mask")
-		(uuid "9e5b8b3b-6624-402d-a28d-6097f97bd629")
+		(fill yes)
+		(layer "B.Mask")
+		(uuid "65be88d5-5b94-4f24-b120-ebd6e213f8e9")
 	)
 	(fp_line
 		(start -8.2 -4.9)
@@ -148,7 +136,7 @@
 			(width 0.05)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "B.CrtYd")
 		(uuid "e5e12edf-5e3f-4290-845e-d1d6b11939f1")
 	)
@@ -159,7 +147,7 @@
 			(width 0.05)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "F.CrtYd")
 		(uuid "779b8e3b-58f0-48ba-824b-2b5c96fc2369")
 	)
@@ -571,4 +559,5 @@
 		(layers "F.Cu" "F.Mask")
 		(uuid "cc1cba94-4f55-49aa-9f8a-bee04476e114")
 	)
+	(embedded_fonts no)
 )

@@ -1,7 +1,7 @@
 # VSCode
 .vscode
 
-# KiCAD
+# KiCad
 *.bak
 *.kicad_prl
 *.lck
@@ -9,7 +9,7 @@
 *-backups
 fp-info-cache
 
-# KiCAD Fabrication Toolkit
+# KiCad Fabrication Toolkit
 fabrication-toolkit-options.json
 production
 

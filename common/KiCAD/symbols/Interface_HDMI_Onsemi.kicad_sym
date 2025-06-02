@@ -1,7 +1,7 @@
 (kicad_symbol_lib
-	(version 20231120)
+	(version 20241209)
 	(generator "kicad_symbol_editor")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(symbol "NB7NQ621MMUTWG"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22,7 +22,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Onsemi:X2QFN38"
+		(property "Footprint" "Interface_HDMI_Onsemi:Onsemi_X2QFN38_4.05x4.50mm_P0.4mm"
 			(at 0 -29.21 0)
 			(effects
 				(font
@@ -31,8 +31,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at -17.78 25.4 0)
+		(property "Datasheet" "https://www.onsemi.com/products/signal-conditioning-control/redrivers/nb7nq621m"
+			(at 0 -34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40,8 +40,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at -17.78 25.4 0)
+		(property "Description" "3.3 V Dual-Mode HDMI 2.1, DisplayPort v1.4a and (DP++) 12 Gbps Level Shifter/Linear Redriver"
+			(at 0 -31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "ki_keywords" "Onsemi HDMI Redriver"
+			(at 0 0 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61,6 +70,150 @@
 					)
 				)
 				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -17.78 22.86 0)
+				(length 5.08)
+				(name "A_RX-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -17.78 20.32 0)
+				(length 5.08)
+				(name "VCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -17.78 17.78 0)
+				(length 5.08)
+				(name "B_RX+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -17.78 15.24 0)
+				(length 5.08)
+				(name "B_RX-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -17.78 12.7 0)
+				(length 5.08)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -17.78 10.16 0)
+				(length 5.08)
+				(name "C_RX+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -17.78 7.62 0)
+				(length 5.08)
+				(name "C_RX-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -17.78 5.08 0)
+				(length 5.08)
+				(name "VCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -248,116 +401,8 @@
 					)
 				)
 			)
-			(pin input line
-				(at -17.78 22.86 0)
-				(length 5.08)
-				(name "A_RX-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 17.78 -20.32 180)
-				(length 5.08)
-				(name "D_TX-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "20"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 17.78 -17.78 180)
-				(length 5.08)
-				(name "D_TX+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "21"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin power_in line
-				(at 17.78 -15.24 180)
-				(length 5.08)
-				(name "VCC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "22"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 17.78 -12.7 180)
-				(length 5.08)
-				(name "C_TX-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "23"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 17.78 -10.16 180)
-				(length 5.08)
-				(name "C_TX+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "24"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 17.78 -7.62 180)
+				(at -17.78 -25.4 0)
 				(length 5.08)
 				(name "GND"
 					(effects
@@ -366,7 +411,7 @@
 						)
 					)
 				)
-				(number "25"
+				(number "39"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -375,34 +420,16 @@
 				)
 			)
 			(pin output line
-				(at 17.78 -5.08 180)
+				(at 17.78 25.4 180)
 				(length 5.08)
-				(name "B_TX-"
+				(name "HPD_SRC"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "26"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 17.78 -2.54 180)
-				(length 5.08)
-				(name "B_TX+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "27"
+				(number "38"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -411,16 +438,16 @@
 				)
 			)
 			(pin input line
-				(at 17.78 0 180)
+				(at 17.78 22.86 180)
 				(length 5.08)
-				(name "VCC"
+				(name "MODE"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "28"
+				(number "37"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -428,17 +455,17 @@
 					)
 				)
 			)
-			(pin output line
-				(at 17.78 2.54 180)
+			(pin input line
+				(at 17.78 20.32 180)
 				(length 5.08)
-				(name "A_TX-"
+				(name "EN"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "29"
+				(number "36"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -447,7 +474,25 @@
 				)
 			)
 			(pin power_in line
-				(at -17.78 20.32 0)
+				(at 17.78 17.78 180)
+				(length 5.08)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "35"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 17.78 15.24 180)
 				(length 5.08)
 				(name "VCC"
 					(effects
@@ -456,25 +501,7 @@
 						)
 					)
 				)
-				(number "3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 17.78 5.08 180)
-				(length 5.08)
-				(name "A_TX+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "30"
+				(number "34"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -483,16 +510,16 @@
 				)
 			)
 			(pin input line
-				(at 17.78 7.62 180)
+				(at 17.78 12.7 180)
 				(length 5.08)
-				(name "EQ0/ADDR0"
+				(name "AUX+"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "31"
+				(number "33"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -519,88 +546,16 @@
 				)
 			)
 			(pin input line
-				(at 17.78 12.7 180)
+				(at 17.78 7.62 180)
 				(length 5.08)
-				(name "AUX+"
+				(name "EQ0/ADDR0"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "33"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 17.78 15.24 180)
-				(length 5.08)
-				(name "VCC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "34"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 17.78 17.78 180)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "35"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at 17.78 20.32 180)
-				(length 5.08)
-				(name "EN"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "36"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at 17.78 22.86 180)
-				(length 5.08)
-				(name "MODE"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "37"
+				(number "31"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -609,16 +564,16 @@
 				)
 			)
 			(pin output line
-				(at 17.78 25.4 180)
+				(at 17.78 5.08 180)
 				(length 5.08)
-				(name "HPD_SRC"
+				(name "A_TX+"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "38"
+				(number "30"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -626,35 +581,17 @@
 					)
 				)
 			)
-			(pin power_in line
-				(at -17.78 -25.4 0)
+			(pin output line
+				(at 17.78 2.54 180)
 				(length 5.08)
-				(name "GND"
+				(name "A_TX-"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "39"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -17.78 17.78 0)
-				(length 5.08)
-				(name "B_RX+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
+				(number "29"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -663,79 +600,7 @@
 				)
 			)
 			(pin input line
-				(at -17.78 15.24 0)
-				(length 5.08)
-				(name "B_RX-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -17.78 12.7 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -17.78 10.16 0)
-				(length 5.08)
-				(name "C_RX+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -17.78 7.62 0)
-				(length 5.08)
-				(name "C_RX-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -17.78 5.08 0)
+				(at 17.78 0 180)
 				(length 5.08)
 				(name "VCC"
 					(effects
@@ -744,7 +609,151 @@
 						)
 					)
 				)
-				(number "9"
+				(number "28"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 17.78 -2.54 180)
+				(length 5.08)
+				(name "B_TX+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 17.78 -5.08 180)
+				(length 5.08)
+				(name "B_TX-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 17.78 -7.62 180)
+				(length 5.08)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 17.78 -10.16 180)
+				(length 5.08)
+				(name "C_TX+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 17.78 -12.7 180)
+				(length 5.08)
+				(name "C_TX-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 17.78 -15.24 180)
+				(length 5.08)
+				(name "VCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 17.78 -17.78 180)
+				(length 5.08)
+				(name "D_TX+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 17.78 -20.32 180)
+				(length 5.08)
+				(name "D_TX-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "20"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -766,5 +775,6 @@
 				)
 			)
 		)
+		(embedded_fonts no)
 	)
 )
