@@ -1,4 +1,4 @@
-create_clock -name clock_100 -period 5 [get_ports clock_100]
+create_clock -name clock_100 -period 10 [get_ports clock_100]
 
 create_clock -name qsfp_refclk -period 1.551 [get_ports qsfp_refclk]
 
