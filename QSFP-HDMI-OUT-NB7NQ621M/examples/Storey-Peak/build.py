@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     if args.command == 'build':
         os.makedirs(GENERATED_PATH, exist_ok = True)
-        runCommand([MILL, 'hdmioutexample.run', '-o', os.path.join(GENERATED_PATH, 'HDMIOutExample.sv')], cwd = COMMON_CHISEL_PATH)
+        runCommand([MILL, 'hdmioutexample.run', '--target-dir', GENERATED_PATH], cwd = COMMON_CHISEL_PATH)
 
         runCommand([ QSYS_SCRIPT, f'''--script={ os.path.join(SCRIPTS_PATH, 'CreateIP.tcl') }''', IP_PATH, RESOLUTION, REFRESH_RATE ], cwd = BUILD_PATH)
 

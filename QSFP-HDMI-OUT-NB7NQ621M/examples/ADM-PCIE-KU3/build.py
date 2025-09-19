@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     if args.command == 'build':
         os.makedirs(GENERATED_PATH, exist_ok = True)
-        runCommand([MILL, 'hdmioutexample.run', '-o', os.path.join(GENERATED_PATH, 'HDMIOutExample.sv')], cwd = COMMON_CHISEL_PATH)
+        runCommand([MILL, 'hdmioutexample.run', '--target-dir', GENERATED_PATH], cwd = COMMON_CHISEL_PATH)
 
         runVivadoScript(os.path.join(SCRIPTS_PATH, 'CreateProject.tcl'), RESOLUTION, REFRESH_RATE)
         runVivadoScript(os.path.join(COMMON_SCRIPTS_PATH, 'Synthesis.tcl'), CONFIG_PATH, JOBS)
