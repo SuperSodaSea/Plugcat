@@ -13048,7 +13048,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_HDMI:HDMI_A_Molex_208658-1001_Horizontal"
+		(property "Footprint" "Connector_Video:HDMI_A_Molex_208658-1001_Horizontal"
 			(at 259.715 50.8 0)
 			(effects
 				(font

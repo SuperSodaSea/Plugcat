@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "Connector_SFF")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCad/footprints/Connector_SFF.pretty")(options "")(descr ""))
   (lib (name "Interface_HDMI_Onsemi")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCad/footprints/Interface_HDMI_Onsemi.pretty")(options "")(descr ""))
+  (lib (name "MountingHole_Extra")(type "KiCad")(uri "${KIPRJMOD}/../../common/KiCad/footprints/MountingHole_Extra.pretty")(options "")(descr ""))
 )
