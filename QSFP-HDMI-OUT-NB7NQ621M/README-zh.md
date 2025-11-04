@@ -70,6 +70,14 @@
       <td align="center"><a href="./examples/ADM-PCIE-KU3/">🔗</a></td>
     </tr>
     <tr>
+      <th colspan="3" scope="rowgroup">Xilinx Virtex Ultrascale</th>
+    </tr>
+    <tr>
+      <td>XCVU095</td>
+      <td>BittWare XUS-P3S</td>
+      <td></td>
+    </tr>
+    <tr>
       <th colspan="3" scope="rowgroup">Xilinx Kintex UltraScale+</th>
     </tr>
     <tr>
