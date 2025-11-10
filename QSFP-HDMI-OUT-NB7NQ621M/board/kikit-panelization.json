@@ -1,0 +1,44 @@
+{
+    "layout": {
+        "alternation": "cols",
+        "hspace": "2mm",
+        "vspace": "2mm",
+        "hbackbone": "2mm",
+        "vbackbone": "2mm",
+        "rows": "5",
+        "cols": "2",
+        "vbonecut": "False",
+        "hbonecut": "False"
+    },
+    "tabs": {
+        "type": "full",
+        "cutout": "2mm",
+        "patchcorners": "False"
+    },
+    "cuts": {
+        "type": "vcuts",
+        "textprolongation": "10mm",
+        "layer": "User.1"
+    },
+    "framing": {
+        "type": "railstb",
+        "fillet": "2mm"
+    },
+    "fiducials": {
+        "type": "4fid",
+        "hoffset": "3mm",
+        "voffset": "3mm"
+    },
+    "copperfill": {
+        "type": "solid",
+        "layers": "F.Cu,In1.Cu,In2.Cu,B.Cu"
+    },
+    "page": {
+        "type": "A4",
+        "anchor": "c",
+        "posy": "47%"
+    },
+    "post": {
+        "millradius": "1mm"
+    }
+}
