@@ -34,65 +34,65 @@ reg [15:0] by;
 reg dx;
 reg dy;
 
-localparam border = 20;
-localparam step = 8;
+localparam border = 16'd20;
+localparam step = 16'd8;
 
 always @(posedge clock) begin
     if (reset) begin
-        valid_reg <= 0;
-        position_valid <= 0;
+        valid_reg <= 1'b0;
+        position_valid <= 1'b0;
         bx <= border;
         by <= border;
-        dx <= 0;
-        dy <= 0;
+        dx <= 16'd0;
+        dy <= 16'd0;
     end else begin
         if (~position_valid) begin
             if (start_frame) begin
-                position_valid <= 1;
-                cx <= 0;
-                cy <= 0;
+                position_valid <= 1'b1;
+                cx <= 16'd0;
+                cy <= 16'd0;
             end
         end
 
         if (position_ready & position_valid) begin
-            if (cx + 4 < video_width) begin
-                cx <= cx + 4;
+            if (cx + 16'd4 < video_width) begin
+                cx <= cx + 16'd4;
             end else begin
-                cx <= 0;
-                if (cy + 1 < video_height) begin
-                    cy <= cy + 1;
+                cx <= 16'd0;
+                if (cy + 16'd1 < video_height) begin
+                    cy <= cy + 16'd1;
                 end else begin
-                    position_valid <= 0;
+                    position_valid <= 1'b0;
 
                     if (~dx) begin
-                        if (bx + step < video_width - border - 200) begin
+                        if (bx + step < video_width - border - 16'd200) begin
                             bx <= bx + step;
                         end else begin
                             bx <= bx - step;
-                            dx <= 1;
+                            dx <= 16'd1;
                         end
                     end else begin
                         if (bx - step >= border) begin
                             bx <= bx - step;
                         end else begin
                             bx <= bx + step;
-                            dx <= 0;
+                            dx <= 16'd0;
                         end
                     end
 
                     if (~dy) begin
-                        if (by + step < video_height - border - 200) begin
+                        if (by + step < video_height - border - 16'd200) begin
                             by <= by + step;
                         end else begin
                             by <= by - step;
-                            dy <= 1;
+                            dy <= 16'd1;
                         end
                     end else begin
                         if (by - step >= border) begin
                             by <= by - step;
                         end else begin
                             by <= by + step;
-                            dy <= 0;
+                            dy <= 16'd0;
                         end
                     end
                 end
@@ -143,7 +143,7 @@ endfunction
 genvar i;
 
 generate
-    for (i = 0; i < 4; i = i + 1) begin: generate_pixels
+    for (i = 16'd0; i < 16'd4; i = i + 16'd1) begin: generate_pixels
         wire [15:0] px = cx + i;
         wire [15:0] py = cy;
 

@@ -1,7 +1,9 @@
 module HDMIOUTExample #(
     parameter CLOCK_FREQUENCY = 0,
     parameter RESOLUTION = "1920x1080",
-    parameter REFRESH_RATE = 60
+    parameter REFRESH_RATE = 60,
+    parameter SCDC_ADDRESS = 7'h54,
+    parameter NB7NQ621M_ADDRESS = 7'h5E
 ) (
     input system_clock,
     input system_reset,
@@ -31,9 +33,6 @@ localparam
     STATE_RUN = 5;
 
 localparam COUNT_RESET_VALUE = CLOCK_FREQUENCY / 10 - 1;
-
-localparam SCDC_ADDRESS = 7'h54;
-localparam NB7NQ621M_ADDRESS = 7'h5E;
 
 
 wire [15:0] h_active;
@@ -109,7 +108,7 @@ function [15:0] NB7NQ621M_I2C_DATA(
     6: NB7NQ621M_I2C_DATA = { 8'h10, 8'b00000011 }; // Data Controls 1
     7: NB7NQ621M_I2C_DATA = { 8'h11, 8'b00001111 }; // Channel Enable / Disable
     8: NB7NQ621M_I2C_DATA = { 8'h12, 8'b10101010 }; // Channel Signal Detect Threshold
-    default: NB7NQ621M_I2C_DATA = 0;
+    default: NB7NQ621M_I2C_DATA = 16'h0;
     endcase
 endfunction
 
@@ -120,7 +119,7 @@ reg [15:0] i2c_data;
 wire i2c_nack;
 reg [3:0] i2c_index;
 
-I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(100_000)) i2c_master(
+I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(10_000)) i2c_master(
     .clock (system_clock),
     .reset (system_reset),
 
@@ -135,7 +134,7 @@ I2CMaster #(.CLOCK_FREQUENCY (CLOCK_FREQUENCY), .FREQUENCY(100_000)) i2c_master(
     .valid (i2c_valid),
     .ready (i2c_ready),
     .address (i2c_address),
-    .rw (0),
+    .rw (1'b0),
     .register (i2c_data[15:8]),
     .data_write (i2c_data[7:0]),
     .nack (i2c_nack),
@@ -161,13 +160,13 @@ always @(posedge system_clock) begin
             if (~hpd) begin
                 state <= STATE_IDLE;
             end else begin
-                if (wait_count != 0) begin
-                    wait_count <= wait_count - 1;
+                if (wait_count != 1'd0) begin
+                    wait_count <= wait_count - 1'd1;
                 end else begin
-                    i2c_ready <= 1;
+                    i2c_ready <= 1'b1;
                     i2c_address <= NB7NQ621M_ADDRESS;
                     i2c_data <= NB7NQ621M_I2C_DATA(0);
-                    i2c_index <= 0;
+                    i2c_index <= 1'd0;
                     state <= STATE_CONFIGURE_NB7NQ621M;
                 end
             end
@@ -183,10 +182,10 @@ always @(posedge system_clock) begin
                         state <= STATE_WAIT;
                     end else begin
                         if (i2c_index != NB7NQ621M_I2C_DATA_COUNT - 1) begin
-                            i2c_data <= NB7NQ621M_I2C_DATA(i2c_index + 1);
-                            i2c_index <= i2c_index + 1;
+                            i2c_data <= NB7NQ621M_I2C_DATA(i2c_index + 1'd1);
+                            i2c_index <= i2c_index + 1'd1;
                         end else begin
-                            i2c_ready <= 1;
+                            i2c_ready <= 1'b1;
                             i2c_address <= SCDC_ADDRESS;
                             i2c_data <= { 8'h02, 8'h01 }; // Source Version
                             state <= STATE_CHECK_HDMI_2_0;
@@ -196,13 +195,13 @@ always @(posedge system_clock) begin
             end
         STATE_CHECK_HDMI_2_0:
             if (~hpd) begin
-                i2c_ready <= 0;
+                i2c_ready <= 1'b0;
                 state <= STATE_IDLE;
             end else begin
                 if (i2c_valid) begin
                     if (i2c_nack) begin
                         // HDMI 2.0 Not Supported
-                        i2c_ready <= 0;
+                        i2c_ready <= 1'b0;
                         if (tmds_clock_over_340mhz) begin
                             wait_count <= COUNT_RESET_VALUE;
                             state <= STATE_WAIT;
@@ -211,7 +210,7 @@ always @(posedge system_clock) begin
                         end
                     end else begin
                         // HDMI 2.0 Supported
-                        i2c_ready <= 1;
+                        i2c_ready <= 1'b1;
                         i2c_address <= SCDC_ADDRESS;
                         i2c_data <= { 8'h20, { 6'b0, tmds_bit_clock_ratio, scrambler_enable } }; // TMDS Configuration
                         state <= STATE_CONFIGURE_TMDS;
@@ -220,11 +219,11 @@ always @(posedge system_clock) begin
             end
         STATE_CONFIGURE_TMDS:
             if (~hpd) begin
-                i2c_ready <= 0;
+                i2c_ready <= 1'b0;
                 state <= STATE_IDLE;
             end else begin
                 if (i2c_valid) begin
-                    i2c_ready <= 0;
+                    i2c_ready <= 1'b0;
                     if (i2c_nack) begin
                         wait_count <= COUNT_RESET_VALUE;
                         state <= STATE_WAIT;
