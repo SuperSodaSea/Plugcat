@@ -120,6 +120,14 @@ Bothered by the lack of video output interface on your FPGA boards? This tiny in
       <td align="center"><a href="./examples/Longs-Peak/">🔗</a></td>
     </tr>
     <tr>
+      <th colspan="3" scope="rowgroup">Altera Stratix 10 GX</th>
+    </tr>
+    <tr>
+      <td>1SG280LN2F43E2VG</td>
+      <td>Microsoft A-2020</td>
+      <td align="center"><a href="./examples/Microsoft-A-2020/">🔗</a></td>
+    </tr>
+    <tr>
       <th colspan="3" scope="rowgroup">Pango Titan-2</th>
     </tr>
     <tr>
