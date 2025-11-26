@@ -183,6 +183,10 @@ python build.py program
 python build.py flash
 ```
 
+## 更新日志
+
+见 [CHANGELOG-zh.md](./CHANGELOG-zh.md)。
+
 ## 画廊
 
 ![Module Photo 2](./images/Module-Photo-2.jpg)

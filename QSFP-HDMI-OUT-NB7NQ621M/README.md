@@ -184,6 +184,10 @@ python build.py program
 python build.py flash
 ```
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md).
+
 ## Gallery
 
 ![Module Photo 2](./images/Module-Photo-2.jpg)
