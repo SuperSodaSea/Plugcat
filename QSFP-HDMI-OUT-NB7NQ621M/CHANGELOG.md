@@ -2,7 +2,7 @@
 
 ## v1.1
 
-v1.0 is fully compatible with v1.0.
+QSFP-HDMI-OUT-NB7NQ621M v1.1 is fully compatible with v1.0.
 
 ### PCB
 
