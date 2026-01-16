@@ -7,7 +7,8 @@
 
 
 module Top(
-    input clock_50,
+    input clock_200_p,
+    input clock_200_n,
 
     input [3:0] key,
     output [3:0] led,
@@ -29,19 +30,13 @@ localparam CLOCK_FREQUENCY = 200_000_000;
 
 wire system_reset_input = ~key[0];
 
-wire clock_50_bufg_wire;
-
-BUFG clock_50_bufg(
-    .O (clock_50_bufg_wire),
-    .I (clock_50)
-);
-
 wire system_clock;
 wire gt_config_clock;
 wire mmcm0_locked;
 
 MMCM0 mmcm0(
-    .clk_in1 (clock_50_bufg_wire),
+    .clk_in1_p (clock_200_p),
+    .clk_in1_n (clock_200_n),
     .reset (system_reset_input),
     .clk_out1 (system_clock),
     .clk_out2 (gt_config_clock),
@@ -79,13 +74,13 @@ wire qsfp_sda_output;
 
 IOBUF qsfp_scl_iobuf(
     .O (qsfp_scl_input),
-    .I (qsfp_scl_output),
+    .I (1'b0),
     .IO (qsfp_scl),
     .T (qsfp_scl_output)
 );
 IOBUF qsfp_sda_iobuf(
     .O (qsfp_sda_input),
-    .I (qsfp_sda_output),
+    .I (1'b0),
     .IO (qsfp_sda),
     .T (qsfp_sda_output)
 );

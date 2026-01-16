@@ -3,8 +3,8 @@ create_ip -module_name MMCM0 -vendor xilinx.com -library ip -name clk_wiz -versi
 set_property -dict {
     CONFIG.PRIMITIVE MMCM
     CONFIG.PRIMARY_PORT clk_in1
-    CONFIG.PRIM_IN_FREQ 50.000
-    CONFIG.PRIM_SOURCE No_buffer
+    CONFIG.PRIM_IN_FREQ 200.000
+    CONFIG.PRIM_SOURCE Differential_clock_capable_pin
 
     CONFIG.NUM_OUT_CLKS 2
 
