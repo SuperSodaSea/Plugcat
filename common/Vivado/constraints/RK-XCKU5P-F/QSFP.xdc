@@ -1,6 +1,6 @@
 # Bank 225, X0Y4~X0Y7
 
-# 156.25MHz
+# MGTREFCLK0, 156.25MHz
 set_property PACKAGE_PIN V7 [get_ports qsfp_refclk_p]
 set_property PACKAGE_PIN V6 [get_ports qsfp_refclk_n]
 
