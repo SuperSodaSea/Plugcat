@@ -1,14 +1,14 @@
 (footprint "MountingHole_1.8mm_M1.6"
-	(version 20241229)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
 		(at 0 -0.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "25fbd151-3f0c-41e9-b891-de11fd23cc58")
+		(uuid "03bdf820-ee61-42ea-ace9-c9b787846578")
 		(effects
 			(font
 				(size 1 1)
@@ -20,7 +20,7 @@
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "af1e8709-05a7-40d3-9580-a365dbf5553d")
+		(uuid "f88f1b64-0fa3-4033-84c8-65315c6ecf71")
 		(effects
 			(font
 				(size 1 1)
@@ -33,7 +33,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "c282d617-4aed-49f1-9e1b-84e43288dc1a")
+		(uuid "9d57398a-3873-46d4-972e-ad4573212a98")
 		(effects
 			(font
 				(size 1 1)
@@ -46,7 +46,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "f15997dd-0891-4cbe-aa9b-8cbaa23f80ea")
+		(uuid "a32446af-3cbd-46b5-9444-0968f45e460b")
 		(effects
 			(font
 				(size 1 1)
@@ -55,6 +55,7 @@
 		)
 	)
 	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
 	(fp_circle
 		(center 0 0)
 		(end 0 1.4)
@@ -64,7 +65,7 @@
 		)
 		(fill no)
 		(layer "B.CrtYd")
-		(uuid "a1802d87-6ceb-4c08-8248-3562e4b74fc4")
+		(uuid "97a218c1-8a16-4d7d-a1e3-3505e1cd1c2c")
 	)
 	(fp_circle
 		(center 0 0)
@@ -75,13 +76,13 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "1c85060d-8bb6-443b-85c3-dfda1bdd7712")
+		(uuid "f8892f06-76c8-4596-9913-0f34fb4d9055")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 2.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "e1a9a3a4-0ae3-47bd-98bf-06fe2c90eaad")
+		(uuid "671ac8a7-3e1f-48c7-953c-a390d49f708d")
 		(effects
 			(font
 				(size 1 1)
@@ -94,7 +95,7 @@
 		(size 1.8 1.8)
 		(drill 1.8)
 		(layers "*.Mask" "Dwgs.User")
-		(uuid "c38e6538-f9af-4741-bf26-160bf2008d08")
+		(uuid "785d1f59-34b3-479e-949a-cb08788ce758")
 	)
 	(embedded_fonts no)
 )
