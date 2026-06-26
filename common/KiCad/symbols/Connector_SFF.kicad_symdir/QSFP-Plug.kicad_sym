@@ -2,7 +2,7 @@
 	(version 20251024)
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
-	(symbol "QSFP"
+	(symbol "QSFP-Plug"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -18,7 +18,7 @@
 				)
 			)
 		)
-		(property "Value" "QSFP"
+		(property "Value" "QSFP Plug"
 			(at 0 26.924 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28,7 +28,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_SFF:QSFP-Plug"
 			(at 0 -26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50,8 +50,8 @@
 				)
 			)
 		)
-		(property "Description" "SFF-8662 QSFP Receptacle / Plug"
-			(at -20.32 22.86 0)
+		(property "Description" "SFF-8662 QSFP Plug"
+			(at 0 -29.21 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(hide yes)
@@ -61,7 +61,7 @@
 				)
 			)
 		)
-		(symbol "QSFP_0_0"
+		(symbol "QSFP-Plug_0_0"
 			(pin power_out line
 				(at -20.32 22.86 0)
 				(length 5.08)
@@ -747,7 +747,7 @@
 				)
 			)
 		)
-		(symbol "QSFP_1_1"
+		(symbol "QSFP-Plug_1_1"
 			(rectangle
 				(start -15.24 25.4)
 				(end 15.24 -25.4)
@@ -785,63 +785,6 @@
 					(font
 						(size 1.27 1.27)
 					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "QSFP-Plug"
-		(extends "QSFP")
-		(property "Reference" "J"
-			(at 0 28.956 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "QSFP Plug"
-			(at 0 26.924 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_SFF:QSFP-Plug"
-			(at 0 -26.67 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -20.32 22.86 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "SFF-8662 QSFP Plug"
-			(at -20.32 22.86 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
 				)
 			)
 		)
