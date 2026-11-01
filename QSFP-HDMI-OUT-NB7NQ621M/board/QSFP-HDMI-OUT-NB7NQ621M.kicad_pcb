@@ -227,6 +227,12 @@
 		(path "/b4666145-9167-47b1-a616-8718af26f54b")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -376,9 +382,28 @@
 				)
 			)
 		)
+		(property "FT Position Offset" "-90"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eb0f5de7-3c9a-47d7-b6fd-ac9031b7892c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/6a64661c-5df1-40a6-86d1-3c06c890e967")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5" "10" "9" "8" "7" "6")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -738,6 +763,12 @@
 		(path "/cd5a3f12-eb4f-4abe-ab13-1a94e0e6da5c")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "6" "5" "4" "3" "2" "7" "8" "1")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1067,6 +1098,15 @@
 		(path "/0b95e4bf-303f-4789-a602-266401c9a19a")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "8" "9" "31" "11" "12" "36" "37" "3" "2" "33" "34" "6" "5" "30"
+					"29" "1" "4" "7" "13" "16" "19" "20" "23" "26" "32" "35" "38" "10" "27"
+					"28" "17" "18" "22" "21" "14" "15" "25" "24"
+				)
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_poly
 			(pts
@@ -1629,7 +1669,7 @@
 			(layers "F.Cu" "F.Mask")
 			(net "GND")
 			(pinfunction "GND_32")
-			(pintype "power_in")
+			(pintype "power_out")
 			(uuid "ff72a3c7-8bf4-4760-a5e8-f2b6c3337ce6")
 		)
 		(pad "33" connect rect
@@ -1754,10 +1794,29 @@
 				)
 			)
 		)
+		(property "FT Position Offset" "90"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "247e1ddd-9e73-47db-94e9-251fc96ad703")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SOT*23*")
 		(path "/dc602fb4-95f8-46ad-89ad-0aaa5ed53bb5")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "5" "4" "2" "6" "1" "3")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2120,6 +2179,12 @@
 		(path "/ecfa3836-c703-4fe9-ac47-7296cf40fe3a")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2266,6 +2331,15 @@
 		(path "/dc26cff2-a0dd-466b-b2d6-edbf260e75b8")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15"
+					"16" "17" "18" "19" "39" "38" "37" "36" "35" "34" "33" "32" "31" "30"
+					"29" "28" "27" "26" "25" "24" "23" "22" "21" "20"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2844,6 +2918,12 @@
 		(path "/868113ea-590c-4958-a52b-8fdea34f9f75")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3097,6 +3177,14 @@
 		(path "/89573028-f3f0-4775-adac-85998899a740")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "4" "6" "7" "9" "10" "12" "13" "15" "16" "14" "19" "2"
+					"5" "18" "8" "11" "17" "SH"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3732,6 +3820,12 @@
 		(path "/3d40798c-ab55-46d0-97b2-efd2e1097711")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
 		(attr through_hole exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -3848,6 +3942,12 @@
 		(path "/0ee4e09d-4afd-4605-944e-f95437f66d83")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3993,6 +4093,12 @@
 		(path "/ae865333-0789-4e4a-8e38-00e3c1afae31")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
 		(attr through_hole exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -4108,6 +4214,12 @@
 		(path "/dbde0edb-3d77-42ca-837b-27e95ac5743d")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4266,6 +4378,12 @@
 		(path "/b018d519-5e81-4409-8752-4cdabf49d2d7")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4424,6 +4542,12 @@
 		(path "/f22d1aea-bea6-478c-8af5-ac74b7d62cc2")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4582,6 +4706,12 @@
 		(path "/bf494c22-024a-4626-8239-b5b8258b3298")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4740,6 +4870,12 @@
 		(path "/3b20c0b5-4a8b-4ccd-b8f1-63c157f24a03")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4898,6 +5034,12 @@
 		(path "/92c8d07e-9238-4aa6-8785-03a7858f5865")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5056,6 +5198,12 @@
 		(path "/cd728aa0-6e6e-4a7c-a069-ae66494de7bc")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5213,6 +5361,12 @@
 		(path "/10725031-2fc6-47e8-9333-4a1c3241fcd0")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "14" "1" "13" "2" "12" "3" "11" "4" "9" "6" "8" "7" "5" "10")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5606,9 +5760,28 @@
 				)
 			)
 		)
+		(property "FT Position Offset" "-90"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fed64c23-45a1-49dd-a70f-cd60864fe6a9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/58d32245-4097-493f-9185-a4c2ed9f44ca")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5" "10" "9" "8" "7" "6")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5968,6 +6141,12 @@
 		(path "/48c984de-1d3a-4994-91f1-4b574b87c5fb")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6350,6 +6529,12 @@
 		(path "/df7a540c-ae99-4872-9724-7d64ca0da39c")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6508,6 +6693,12 @@
 		(path "/1c197701-5f38-4f01-8ac8-4b6cc54b4f9f")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6666,6 +6857,12 @@
 		(path "/b4d6624b-fcd7-48df-bc5b-a082a199b108")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6824,6 +7021,12 @@
 		(path "/51e88ac4-d75c-4b10-89ad-17e8a08df5ea")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6982,6 +7185,12 @@
 		(path "/dfa4f662-4630-4f19-82e1-bf0062038277")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7128,6 +7337,12 @@
 		(path "/80879c67-f8e4-40b6-9792-425db8c7fc16")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7420,6 +7635,12 @@
 		(path "/0f3a73e2-fc0d-4a6a-b3ea-6c128a35d59d")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7583,6 +7804,12 @@
 		(path "/94f59bde-7848-496d-968e-0f533be9db06")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7746,6 +7973,12 @@
 		(path "/8b9e1a93-3347-415d-8094-848e460f86bb")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7909,6 +8142,12 @@
 		(path "/25c8b96f-71a9-490b-beda-2127d5537c6d")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8072,6 +8311,12 @@
 		(path "/62800e1c-5a5d-4ac8-bb62-0fccf6f7d869")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8235,6 +8480,12 @@
 		(path "/8f23b48a-c952-461b-b271-c8a391bcac54")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8398,6 +8649,12 @@
 		(path "/c15291a6-2c28-40e4-a864-dbb5ed342f8d")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8561,6 +8818,12 @@
 		(path "/234232bf-4cbe-4ba7-bb8a-2540d7d990ad")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8724,6 +8987,12 @@
 		(path "/6050952a-df27-489d-bdc8-f646a21dad88")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8887,6 +9156,12 @@
 		(path "/f6897b82-c800-477e-a6c0-b644f3af971d")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9050,6 +9325,12 @@
 		(path "/d6c0ef25-ae8c-41a2-ba1e-ccff336e96f0")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9213,6 +9494,12 @@
 		(path "/7dc38038-8583-46d9-8a4a-13eba332fddd")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9376,6 +9663,12 @@
 		(path "/989cb402-00ea-441a-b7e6-4c41913c52a6")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9539,6 +9832,12 @@
 		(path "/f8d35fcf-8cac-44b4-adab-fff5b8ba25d1")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9702,6 +10001,12 @@
 		(path "/5e323619-4238-4302-807f-14c65d448ffb")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9865,6 +10170,12 @@
 		(path "/e19b97ff-93e3-42c8-a567-b787ff216e59")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10028,6 +10339,12 @@
 		(path "/b9f4a0aa-0a57-4652-9cea-88c912bbc00b")
 		(sheetname "/")
 		(sheetfile "QSFP-HDMI-OUT-NB7NQ621M.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10388,7 +10705,7 @@
 		)
 	)
 	(gr_text "Plugcat"
-		(at 113 100.2 270)
+		(at 113 100 270)
 		(layer "B.SilkS")
 		(uuid "612b555c-3fea-492a-af72-2980305114d5")
 		(effects

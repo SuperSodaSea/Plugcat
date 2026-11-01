@@ -9,27 +9,29 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "J"
-			(at 0 28.956 0)
+			(at 3.81 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "QSFP Plug"
-			(at 0 26.924 0)
+			(at 3.81 24.13 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Connector_SFF:QSFP-Plug"
-			(at 0 -26.67 0)
+			(at 1.27 -24.13 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(hide yes)
@@ -37,6 +39,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Datasheet" ""
@@ -51,7 +54,7 @@
 			)
 		)
 		(property "Description" "SFF-8662 QSFP Plug"
-			(at 0 -29.21 0)
+			(at 1.27 -26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(hide yes)
@@ -59,29 +62,12 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(symbol "QSFP-Plug_0_0"
-			(pin power_out line
-				(at -20.32 22.86 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin output line
-				(at -20.32 20.32 0)
+				(at -17.78 -10.16 0)
 				(length 5.08)
 				(name "TX2n"
 					(effects
@@ -99,7 +85,7 @@
 				)
 			)
 			(pin output line
-				(at -20.32 17.78 0)
+				(at -17.78 -7.62 0)
 				(length 5.08)
 				(name "TX2p"
 					(effects
@@ -116,26 +102,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at -20.32 15.24 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin output line
-				(at -20.32 12.7 0)
+				(at -17.78 -20.32 0)
 				(length 5.08)
 				(name "TX4n"
 					(effects
@@ -153,7 +121,7 @@
 				)
 			)
 			(pin output line
-				(at -20.32 10.16 0)
+				(at -17.78 -17.78 0)
 				(length 5.08)
 				(name "TX4p"
 					(effects
@@ -170,44 +138,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at -20.32 7.62 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin output line
-				(at -20.32 5.08 0)
-				(length 5.08)
-				(name "ModSelL"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at -20.32 2.54 0)
+				(at -17.78 12.7 0)
 				(length 5.08)
 				(name "ResetL"
 					(effects
@@ -225,7 +157,7 @@
 				)
 			)
 			(pin power_out line
-				(at -20.32 0 0)
+				(at 2.54 27.94 270)
 				(length 5.08)
 				(name "VccRx"
 					(effects
@@ -243,7 +175,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -2.54 0)
+				(at -17.78 5.08 0)
 				(length 5.08)
 				(name "SCL"
 					(effects
@@ -261,7 +193,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -5.08 0)
+				(at -17.78 2.54 0)
 				(length 5.08)
 				(name "SDA"
 					(effects
@@ -278,26 +210,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at -20.32 -7.62 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin input line
-				(at -20.32 -10.16 0)
+				(at 17.78 -12.7 180)
 				(length 5.08)
 				(name "RX3p"
 					(effects
@@ -315,7 +229,7 @@
 				)
 			)
 			(pin input line
-				(at -20.32 -12.7 0)
+				(at 17.78 -15.24 180)
 				(length 5.08)
 				(name "RX3n"
 					(effects
@@ -332,98 +246,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at -20.32 -15.24 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "16"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin input line
-				(at -20.32 -17.78 0)
-				(length 5.08)
-				(name "RX1p"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "17"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -20.32 -20.32 0)
-				(length 5.08)
-				(name "RX1n"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "18"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_out line
-				(at -20.32 -22.86 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "19"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_out line
-				(at 20.32 -22.86 180)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "20"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at 20.32 -20.32 180)
+				(at 17.78 -10.16 180)
 				(length 5.08)
 				(name "RX2n"
 					(effects
@@ -441,7 +265,7 @@
 				)
 			)
 			(pin input line
-				(at 20.32 -17.78 180)
+				(at 17.78 -7.62 180)
 				(length 5.08)
 				(name "RX2p"
 					(effects
@@ -458,26 +282,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at 20.32 -15.24 180)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "23"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin input line
-				(at 20.32 -12.7 180)
+				(at 17.78 -20.32 180)
 				(length 5.08)
 				(name "RX4n"
 					(effects
@@ -495,7 +301,7 @@
 				)
 			)
 			(pin input line
-				(at 20.32 -10.16 180)
+				(at 17.78 -17.78 180)
 				(length 5.08)
 				(name "RX4p"
 					(effects
@@ -512,26 +318,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at 20.32 -7.62 180)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "26"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin input line
-				(at 20.32 -5.08 180)
+				(at 17.78 15.24 180)
 				(length 5.08)
 				(name "ModPrsL"
 					(effects
@@ -549,7 +337,7 @@
 				)
 			)
 			(pin input line
-				(at 20.32 -2.54 180)
+				(at 17.78 12.7 180)
 				(length 5.08)
 				(name "IntL/RxLOSL"
 					(effects
@@ -567,7 +355,7 @@
 				)
 			)
 			(pin power_out line
-				(at 20.32 0 180)
+				(at 0 27.94 270)
 				(length 5.08)
 				(name "VccTx"
 					(effects
@@ -585,7 +373,7 @@
 				)
 			)
 			(pin power_out line
-				(at 20.32 2.54 180)
+				(at -2.54 27.94 270)
 				(length 5.08)
 				(name "Vcc1"
 					(effects
@@ -603,7 +391,7 @@
 				)
 			)
 			(pin output line
-				(at 20.32 5.08 180)
+				(at -17.78 10.16 0)
 				(length 5.08)
 				(name "LPMode/TxDis"
 					(effects
@@ -620,26 +408,8 @@
 					)
 				)
 			)
-			(pin power_in line
-				(at 20.32 7.62 180)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "32"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin output line
-				(at 20.32 10.16 180)
+				(at -17.78 -12.7 0)
 				(length 5.08)
 				(name "TX3p"
 					(effects
@@ -657,7 +427,7 @@
 				)
 			)
 			(pin output line
-				(at 20.32 12.7 180)
+				(at -17.78 -15.24 0)
 				(length 5.08)
 				(name "TX3n"
 					(effects
@@ -674,26 +444,8 @@
 					)
 				)
 			)
-			(pin power_out line
-				(at 20.32 15.24 180)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "35"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin output line
-				(at 20.32 17.78 180)
+				(at -17.78 -2.54 0)
 				(length 5.08)
 				(name "TX1p"
 					(effects
@@ -711,7 +463,7 @@
 				)
 			)
 			(pin output line
-				(at 20.32 20.32 180)
+				(at -17.78 -5.08 0)
 				(length 5.08)
 				(name "TX1n"
 					(effects
@@ -728,8 +480,64 @@
 					)
 				)
 			)
+		)
+		(symbol "QSFP-Plug_1_0"
+			(pin output line
+				(at -17.78 15.24 0)
+				(length 5.08)
+				(name "ModSelL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 17.78 -2.54 180)
+				(length 5.08)
+				(name "RX1p"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 17.78 -5.08 180)
+				(length 5.08)
+				(name "RX1n"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 			(pin power_out line
-				(at 20.32 22.86 180)
+				(at 0 -27.94 90)
 				(length 5.08)
 				(name "GND"
 					(effects
@@ -738,7 +546,7 @@
 						)
 					)
 				)
-				(number "38"
+				(number "[1,4,7,13,16,19,20,23,26,32,35,38]"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -749,42 +557,14 @@
 		)
 		(symbol "QSFP-Plug_1_1"
 			(rectangle
-				(start -15.24 25.4)
-				(end 15.24 -25.4)
+				(start -12.7 22.86)
+				(end 12.7 -22.86)
 				(stroke
 					(width 0)
 					(type default)
 				)
 				(fill
 					(type background)
-				)
-			)
-			(polyline
-				(pts
-					(xy 0 25.4) (xy 0 -25.4)
-				)
-				(stroke
-					(width 0)
-					(type dot)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(text "Bottom"
-				(at -5.08 -22.86 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(text "Top"
-				(at 5.08 -22.86 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
 				)
 			)
 		)
